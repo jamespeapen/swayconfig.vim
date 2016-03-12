@@ -1,5 +1,22 @@
 # 1) ERROR
      sdsjdkjsdkO
+    fon t xft : System San Francisco Display,FontAwesome UI
+$var.one
+bindsyn --release $mod+x exec --no-startup-id import /tmp/latest-screenshot.png
+kjdfdjdfkfO
+default_orientation vErtical
+floating_maximum_size -1  -1
+workspace_layout defeult
+new_window none 0
+new_window pixet
+new_window normall
+new_float none 0
+new_float pixet
+new_float normall
+hade_edge_borders both
+exec_ chromium
+mouse_wraping none
+
 # 2) COMMENT
 # This is a comment
 # TODO: This is a todo comment
@@ -11,16 +28,12 @@ font pango:DejaVu Sans Mono, Terminus Bold Semi-Condensed 11
 font pango:Terminus 11px
     #font xft:Cousine, FontAwesome 10
     font xft:System San Francisco Display, FontAwesome 10
-# >>> syntax error
-    fon t xft : System San Francisco Display,FontAwesome UI
 
 # 5) Variable
 $var-one
 $varOne
 $var_one
 set $m Mod1
-# >>> syntax error
-$var.one
 
 # 5) Keybinding
     bindsym $mod+f fullscreen toggle
@@ -28,28 +41,17 @@ bindsym $mod+Shift+r restart
 bindcode 214 exec --no-startup-id /home/michael/toggle_beamer.sh
 bindsym --release $mod+x exec --no-startup-id xdotool key --clearmodifiers ctrl+v
 bindsym --release $mod+x exec --no-startup-id import /tmp/latest-screenshot.png
-# >>> syntax error
-bindsyn --release $mod+x exec --no-startup-id import /tmp/latest-screenshot.png
 
 # 6) Floating
 floating_modifier $mod
 floating_minimum_size 75 x 50
 floating_maximum_size -1 x -1
-# >>> syntax error
-floating_maximum_size -1  -1
 
 # 7) Workspace orientation
 default_orientation vertical
-# >>> syntax error
-default_orientation vErtical
-
-# 8) Another Error
-kjdfdjdfkfO
 
 # 9) Workspace layout
 workspace_layout default
-# >>> syntax error
-workspace_layout defeult
 
 # 10) Border style
 new_window none
@@ -62,18 +64,9 @@ new_float pixel
 new_float normal
 new_float pixel 1
 new_float normal 2
-# >>> syntax error
-new_window none 0
-new_window pixet
-new_window normall
-new_float none 0
-new_float pixet
-new_float normall
 
 # 11) Hide border edge
 hide_edge_borders both
-# >>> syntax error
-hade_edge_borders both
 
 # 11) Arbitrary command for specific window
 for_window [class="XTerm"] floating enable
@@ -94,8 +87,6 @@ assign [class="^URxvt$" instance="^irssi$"] → 3
 exec chromium
 exec --no-startup-id chromium
 exec_always ~/my_script.sh
-# >>> syntax error
-exec_ chromium
 
 # 15) Automatically putting workspaces on specific screens
 workspace 1 output LVDS1
@@ -117,8 +108,6 @@ ipc-socket ~/.i3/i3-ipc.sock
 # 18) Focus follows mouse
 mouse_warping output
 mouse_warping none
-# >>> syntax error
-mouse_wraping none
 
 # 19) Popups during fullscreen mode
 popup_during_fullscreen smart
@@ -136,7 +125,6 @@ workspace_auto_back_and_forth yes
 force_display_urgency_hint 1000 ms
 
 # 24) Focus on window activation
-focus_on_window_activation smart|urgent|focus|none
 focus_on_window_activation urgent
 
 # 25) Drawing marks on window decoration
@@ -154,9 +142,13 @@ bar {
 		background $bg_color
 		separator #757575
 		urgent_workspace   $urgent_bg_color   $urgent_bg_color   $text_color
-	}
+    }
 }
 
 # 27) Line continuation
 bindsym Mod1+f \
 fullscreen toggle
+
+font \
+xft:System San Francisco Display, \
+FontAwesome 10

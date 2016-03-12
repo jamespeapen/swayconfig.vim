@@ -37,6 +37,9 @@ syn match FontNamespace /\w\+:/ contained contains=FontSeparator
 syn match FontContent /-\?\w\+\(-\+\|\s\+\|,\)/ contained contains=FontNamespace,FontSeparator,FontKeyword
 syn match FontSize /\s\=\d\+\(px\)\?\s\?$/ contained
 syn match Font /^\s*font\s\+.*$/ contains=FontContent,FontSeparator,FontSize,FontNamespace
+"syn match Font /^\s*font\s\+.*\(\\\_.*\)\?$/ contains=FontContent,FontSeparator,FontSize,FontNamespace
+"syn match Font /^\s*font\s\+.*\(\\\_.*\)\?[^\\]\+$/ contains=FontContent,FontSeparator,FontSize,FontNamespace
+"syn match Font /^\s*font\s\+\(\(.*\\\_.*\)\|\(.*[^\\]\+$\)\)/ contains=FontContent,FontSeparator,FontSize,FontNamespace
 
 " variables
 syn match String /\(['"]\)\(.\{-}\)\1/ contained
@@ -119,7 +122,7 @@ syn match MouseWarping /^\s*mouse_warping\s\+\(output\|none\)\s\?$/ contains=Mou
 
 " Popups during fullscreen mode
 syn keyword PopupOnFullscreenKeyword popup_during_fullscreen contained
-syn keyword PopuponFullscreenType smart ignore leave_fullscreen
+syn keyword PopuponFullscreenType smart ignore leave_fullscreen contained
 syn match PopupOnFullscreen /^\s*popup_during_fullscreen\s\+\w\+\s\?$/ contains=PopupOnFullscreenKeyword,PopupOnFullscreenType
 
 " Focus wrapping
@@ -150,10 +153,11 @@ syn keyword DrawingMarksKeyword show_marks contained
 syn match DrawingMarks /^\s*show_marks\s\+\(yes\|no\)\s\?$/ contains=FocusWrappingType,DrawingMarksKeyword
 
 " Group mode/bar
-" TODO
+syn keyword BlockKeyword mode bar colors i3bar_command status_command position exec mode hidden_state modifier id position output background statusline tray_output tray_padding separator separator_symbol workspace_buttons strip_workspace_numbers binding_mode_indicator focused_workspace active_workspace inactive_workspace urgent_workspace binding_mode contained
+syn region Block start=+.*s\?{$+ end=+^}$+ contains=BlockKeyword,String,Bind,Comment,FontSize,FocusWrappingType,Color,Variable transparent keepend extend
 
 " Line continuation
-" TODO
+" TODO: This is not the easiest thing to do. I am keeping it for another time.
 
 " Define the highlighting.
 hi! def link Error Error
@@ -211,6 +215,7 @@ hi! def link AutomaticSwitchKeyword Identifier
 hi! def link DelayUrgencyKeyword Identifier
 hi! def link FocusOnActivationKeyword Identifier
 hi! def link DrawingMarksKeyword Identifier
+hi! def link BlockKeyword Identifier
 hi! def link Variable Statement
 hi! def link ArbitraryCommand Ignore
 
