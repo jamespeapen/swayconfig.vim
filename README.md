@@ -2,8 +2,8 @@ i3config.vim - vim i3 config syntax highlighting
 ------------------------------------------------
 
 This file contains syntax highlighting that I use for i3 config in Vim.
-Compared to the standard syntax highlighting for conf, i3config
-adds highlighting of (i3 defined) all keywords, types and options.
+Compared to the vim standard *conf* syntax highlighting, i3config
+adds highlighting of all keywords, types and options as defined in the i3 configuration manual.
 
 I build this based on the current specification provided (as of Sat 12 Mar 2016) in:
 
@@ -29,9 +29,9 @@ For auto detection, the recommended method is to rename your file to something l
 + something.i3config
 + something.i3.config
 
-> This way you can keep you file clean somewhere in a dotfile repository and have it symlinked to ~/.i3/config
+> This way you can keep your file clean somewhere in a dotfile repository and have it symlinked to ~/.i3/config
 
-If you don't want to then you can always do:
+If you don't want to, then you can always do:
 ```vim
 :set ft=i3config
 ```
@@ -42,7 +42,7 @@ or
 
 Installation instructions
 -------------------------
-Follow one of the sets of directions below and reload vim afterwards.
+Follow one of the steps below and reload vim afterwards.
 
 #### Vundle
 Instal using [vundle](https://github.com/gmarik/Vundle.vim) by adding
@@ -51,10 +51,10 @@ Plugin 'mboughaba/i3config.vim'
 ```
 to .vimrc and run `:PluginInstall`.
 
-> The two steps below are just some indications, you may change them to fit your needs.
+> I use Vundle myself, the two steps below may not be fully correct, you need to change them to fit your needs.
 
 #### Git submodule + Pathogen
-I don't use Pathogen myself. If you have [pathogen](https://github.com/tpope/vim-pathogen) installed,
+If you have [pathogen](https://github.com/tpope/vim-pathogen) installed,
 and you prefer to use git submodules, run
 ```sh
 cd ~/.vim
@@ -74,7 +74,7 @@ rm -rf /tmp/i3config.vim
 Contribution
 ------------
 
-Feel free to make pull request, I will gladly integrate them.
+Feel free to make pull request, I will integrate it when time permits.
 Make sure to add a line to cover your test in the *test.i3config*.
 
 Issues
