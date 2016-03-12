@@ -1,0 +1,162 @@
+# 1) ERROR
+     sdsjdkjsdkO
+# 2) COMMENT
+# This is a comment
+# TODO: This is a todo comment
+     # This is another comment
+# 3) FONT
+font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+font pango:DejaVu Sans Mono 10
+font pango:DejaVu Sans Mono, Terminus Bold Semi-Condensed 11
+font pango:Terminus 11px
+    #font xft:Cousine, FontAwesome 10
+    font xft:System San Francisco Display, FontAwesome 10
+# >>> syntax error
+    fon t xft : System San Francisco Display,FontAwesome UI
+
+# 5) Variable
+$var-one
+$varOne
+$var_one
+set $m Mod1
+# >>> syntax error
+$var.one
+
+# 5) Keybinding
+    bindsym $mod+f fullscreen toggle
+bindsym $mod+Shift+r restart
+bindcode 214 exec --no-startup-id /home/michael/toggle_beamer.sh
+bindsym --release $mod+x exec --no-startup-id xdotool key --clearmodifiers ctrl+v
+bindsym --release $mod+x exec --no-startup-id import /tmp/latest-screenshot.png
+# >>> syntax error
+bindsyn --release $mod+x exec --no-startup-id import /tmp/latest-screenshot.png
+
+# 6) Floating
+floating_modifier $mod
+floating_minimum_size 75 x 50
+floating_maximum_size -1 x -1
+# >>> syntax error
+floating_maximum_size -1  -1
+
+# 7) Workspace orientation
+default_orientation vertical
+# >>> syntax error
+default_orientation vErtical
+
+# 8) Another Error
+kjdfdjdfkfO
+
+# 9) Workspace layout
+workspace_layout default
+# >>> syntax error
+workspace_layout defeult
+
+# 10) Border style
+new_window none
+new_window pixel
+new_window normal
+new_window pixel 1
+new_window normal 2
+new_float none
+new_float pixel
+new_float normal
+new_float pixel 1
+new_float normal 2
+# >>> syntax error
+new_window none 0
+new_window pixet
+new_window normall
+new_float none 0
+new_float pixet
+new_float normall
+
+# 11) Hide border edge
+hide_edge_borders both
+# >>> syntax error
+hade_edge_borders both
+
+# 11) Arbitrary command for specific window
+for_window [class="XTerm"] floating enable
+for_window [class="urxvt"] border pixel 1
+for_window [title="x200: ~/work"] floating enable
+
+# 12) Disable focus upon opening
+no_focus [window_role="pop-up"]
+
+# 13) Move client to specific workspace automatically
+assign [class="URxvt"] 2
+assign [class="^URxvt$"] 2
+assign [class="^URxvt$"] → 2
+assign [class="^URxvt$"] → work
+assign [class="^URxvt$" instance="^irssi$"] → 3
+
+# 14) Auto start application
+exec chromium
+exec --no-startup-id chromium
+exec_always ~/my_script.sh
+# >>> syntax error
+exec_ chromium
+
+# 15) Automatically putting workspaces on specific screens
+workspace 1 output LVDS1
+workspace 5 output VGA1
+workspace "2: vim" output VGA1
+
+# 16) Changing colors
+# class                 border  backgr. text    indicator child_border
+client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
+client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+client.background       #ffffff
+
+# 17) Interprocess communication
+ipc-socket ~/.i3/i3-ipc.sock
+
+# 18) Focus follows mouse
+mouse_warping output
+mouse_warping none
+# >>> syntax error
+mouse_wraping none
+
+# 19) Popups during fullscreen mode
+popup_during_fullscreen smart
+
+# 20) Focus wrapping
+force_focus_wrapping yes
+
+# 21) Forcing Xinerama
+force_xinerama no
+
+# 22) Automatic back-and-forth when switching to the current workspace
+workspace_auto_back_and_forth yes
+
+# 23) Delay urgency hint
+force_display_urgency_hint 1000 ms
+
+# 24) Focus on window activation
+focus_on_window_activation smart|urgent|focus|none
+focus_on_window_activation urgent
+
+# 25) Drawing marks on window decoration
+show_marks yes
+
+# 26) Group mode/bar
+mode "resize" {
+        # Pressing down will grow the window’s height.
+        bindsym l resize shrink width 10 px or 10 ppt
+}
+bar {
+    status_command /home/mohamed/.conkyi3
+    position top
+	colors {
+		background $bg_color
+		separator #757575
+		urgent_workspace   $urgent_bg_color   $urgent_bg_color   $text_color
+	}
+}
+
+# 27) Line continuation
+bindsym Mod1+f \
+fullscreen toggle
