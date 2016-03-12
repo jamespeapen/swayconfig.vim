@@ -57,7 +57,7 @@ syn match Modifier /\w\++\w\+\(\(+\w\+\)\+\)\?/ contained contains=VariableModif
 syn match Number /\d\+/ contained
 syn keyword BindKeyword bindsym bindcode exec contained
 syn match BindArgument /--\w\+\(\(-\w\+\)\+\)\?\s/ contained
-syn match Bind /^\s*\(bindsym\|bindcode\)\s\+.*$/ contains=Variable,BindKeyword,VariableAndModifier,BindArgument,Number,Modifier,Action
+syn match Bind /^\s*\(bindsym\|bindcode\)\s\+.*$/ contains=Variable,BindKeyword,VariableAndModifier,BindArgument,Number,Modifier,Action,String
 
 " Floating
 syn keyword SizeSpecial x contained
@@ -100,7 +100,7 @@ syn match Assign /^\s*assign\s\+.*$/ contains=AssignKeyword,WindowCommandSpecial
 " Auto start applications
 syn keyword ExecKeyword exec exec_always contained
 syn match NoStartupId /--no-startup-id/ contained " We are not using BindArgument as only no-startup-id is supported here
-syn match Exec /^\s*exec\(_always\)\?\s\+.*$/ contains=ExecKeyword,NoStartupId
+syn match Exec /^\s*exec\(_always\)\?\s\+.*$/ contains=ExecKeyword,NoStartupId,String
 
 " Automatically putting workspaces on specific screens
 syn keyword WorkspaceKeyword workspace contained
@@ -154,7 +154,7 @@ syn match DrawingMarks /^\s*show_marks\s\+\(yes\|no\)\s\?$/ contains=FocusWrappi
 
 " Group mode/bar
 syn keyword BlockKeyword mode bar colors i3bar_command status_command position exec mode hidden_state modifier id position output background statusline tray_output tray_padding separator separator_symbol workspace_buttons strip_workspace_numbers binding_mode_indicator focused_workspace active_workspace inactive_workspace urgent_workspace binding_mode contained
-syn region Block start=+.*s\?{$+ end=+^}$+ contains=BlockKeyword,String,Bind,Comment,FontSize,FocusWrappingType,Color,Variable transparent keepend extend
+syn region Block start=+.*s\?{$+ end=+^}$+ contains=BlockKeyword,String,Bind,Comment,Font,FocusWrappingType,Color,Variable transparent keepend extend
 
 " Line continuation
 " TODO: This is not the easiest thing to do. I am keeping it for another time.
