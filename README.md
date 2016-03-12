@@ -90,4 +90,7 @@ Mohamed Boughaba
 
 Development is done at: <https://github.com/mboughaba/i3config.vim>
 
-Last update: Sat 12 Mar 2016
+License
+-------
+
+MIT
