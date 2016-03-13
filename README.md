@@ -77,6 +77,10 @@ What about PotatoesMaster/i3-vim-syntax
 *PotatoesMaster/i3-vim-syntax* was the one I used in the past.
 But as the maintainer himself pointed out, there are quite some issues and a rewrite is needed.
 
+![Screenshot](https://github.com/mboughaba/i3config.vim/blob/master/comparaison.png)
+
+> I am only comparing two plugins :) let's take it easy...
+
 
 Contribution
 ------------
