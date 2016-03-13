@@ -71,6 +71,13 @@ mv /tmp/i3config.vim/after/syntax/i3config.vim ~/.vim/after/syntax/i3config.vim
 rm -rf /tmp/i3config.vim
 ```
 
+What about PotatoesMaster/i3-vim-syntax
+---------------------------------------
+
+*PotatoesMaster/i3-vim-syntax* was the one I used in the past.
+But as the maintainer himself pointed out, there are quite some issues and a rewrite is needed.
+
+
 Contribution
 ------------
 
