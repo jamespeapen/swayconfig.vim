@@ -84,10 +84,6 @@ Contribution
 Feel free to make pull request, I will integrate it when time permits.
 Make sure to add a line to cover your test in the *test.i3config*.
 
-Issues
-------
-
-Line continuation is not supported, i3config highlighting will report split lines as errors.
 
 Background information
 ----------------------
