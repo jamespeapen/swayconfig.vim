@@ -1,8 +1,8 @@
 " Vim syntax file
-" Language:	i3 config file
+" Language: i3 config file
 " Maintainer: Mohamed Boughaba <mohamed dot bgb at gmail dot com>
-" Version: 0.2
-" Last Change: Sun 06 Mar 2016 03:35:13 PM CET
+" Version: 0.3
+" Last Change: 2017-10-27 23:59
 
 " References:
 " http://i3wm.org/docs/userguide.html#configuring
@@ -12,10 +12,10 @@
 " For version 5.x: Clear all syntax items
 " For version 6.x: Quit when a syntax file was already loaded
 if version < 600
-  syntax clear
-elseif exists("b:current_syntax")
-  finish
-endif
+  syn clear
+elsei exists("b:current_syntax")
+  fini
+en
 
 " Error
 syn match Error /.*/
