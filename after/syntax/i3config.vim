@@ -99,8 +99,7 @@ syn match Assign /^\s*assign\s\+.*$/ contains=AssignKeyword,WindowCommandSpecial
 
 " X resources
 syn keyword ResourceKeyword set_from_resource contained
-syn match ResourceSpecial /→/ contained
-syn match Resource /^\s*set_from_resource\s\+.*$/ contains=ResourceKeyword,WindowCommandSpecial,ResourceSpecial,Color,Variable
+syn match Resource /^\s*set_from_resource\s\+.*$/ contains=ResourceKeyword,WindowCommandSpecial,Color,Variable
 
 " Auto start applications
 syn keyword ExecKeyword exec exec_always contained
@@ -194,7 +193,6 @@ hi! def link VariableModifier Special
 hi! def link SizeSpecial Special
 hi! def link WindowSpecial Special
 hi! def link AssignSpecial Special
-hi! def link ResourceSpecial Special
 hi! def link FontNamespace PreProc
 hi! def link BindArgument PreProc
 hi! def link NoStartupId PreProc
