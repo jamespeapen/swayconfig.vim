@@ -152,3 +152,6 @@ fullscreen toggle
 font \
 xft:System San Francisco Display, \
 FontAwesome 10
+
+# 28) X resources
+set_from_resource $black i3wm.color0 #000000
