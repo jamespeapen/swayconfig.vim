@@ -31,9 +31,11 @@ font pango:Terminus 11px
 
 # 5) Variable
 $var-one
+$var-with-more-dashes
 $varOne
 $var_one
 set $m Mod1
+set $focused-bg-color   #404552
 
 # 5) Keybinding
     bindsym $mod+f fullscreen toggle
@@ -138,10 +140,10 @@ mode "resize" {
 bar {
     status_command /home/mohamed/.conkyi3
     position top
-	colors {
-		background $bg_color
-		separator #757575
-		urgent_workspace   $urgent_bg_color   $urgent_bg_color   $text_color
+  colors {
+    background $bg_color
+    separator #757575
+    urgent_workspace   $urgent_bg_color   $urgent_bg_color   $text_color
     }
 }
 

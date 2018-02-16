@@ -46,7 +46,7 @@ syn match String /\(['"]\)\(.\{-}\)\1/ contained
 syn match Color /#\w\{6}/ contained
 syn match VariableModifier /+/ contained
 syn match VariableAndModifier /+\w\+/ contained contains=VariableModifier
-syn match Variable /\$\w\+\(-\w\+\)\?\(\s\|+\)\?/ contains=VariableModifier,VariableAndModifier
+syn match Variable /\$\w\+\(\(-\w\+\)\+\)\?\(\s\|+\)\?/ contains=VariableModifier,VariableAndModifier
 syn keyword InitializeKeyword set contained
 syn match Initialize /^\s*set\s\+.*$/ contains=Variable,InitializeKeyword,Color,String
 
