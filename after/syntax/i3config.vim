@@ -17,6 +17,8 @@ elsei exists("b:current_syntax")
   fini
 en
 
+scriptencoding utf-8
+
 " Error
 syn match Error /.*/
 
@@ -76,7 +78,7 @@ syn match Layout /^\s*workspace_layout\s\+\(default\|stacking\|tabbed\)\s\?$/ co
 
 " Border style
 syn keyword BorderStyleKeyword none normal pixel contained
-syn match BorderStyle /^\s*\(new_window\|new_float\)\s\+\(none\|\(normal\|pixel\)\(\s\+\d\+\)\?\)\s\?$/ contains=BorderStyleKeyword,number
+syn match BorderStyle /^\s*\(new_window\|new_float\|default_border\|default_floating_border\)\s\+\(none\|\(normal\|pixel\)\(\s\+\d\+\)\?\)\s\?$/ contains=BorderStyleKeyword,number
 
 " Hide borders and edges
 syn keyword EdgeKeyword none vertical horizontal both contained
