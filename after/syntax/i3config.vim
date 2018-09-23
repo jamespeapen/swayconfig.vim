@@ -17,6 +17,8 @@ elsei exists("b:current_syntax")
   fini
 en
 
+scriptencoding utf-8
+
 " Error
 syn match Error /.*/
 
@@ -80,7 +82,7 @@ syn match Layout /^\s*workspace_layout\s\+\(default\|stacking\|tabbed\)\s\?$/ co
 
 " Border style
 syn keyword BorderStyleKeyword none normal pixel contained
-syn match BorderStyle /^\s*\(new_window\|new_float\)\s\+\(none\|\(normal\|pixel\)\(\s\+\d\+\)\?\)\s\?$/ contains=BorderStyleKeyword,number
+syn match BorderStyle /^\s*\(new_window\|new_float\|default_border\|default_floating_border\)\s\+\(none\|\(normal\|pixel\)\(\s\+\d\+\)\?\)\s\?$/ contains=BorderStyleKeyword,number
 
 " Hide borders and edges
 syn keyword EdgeKeyword none vertical horizontal both contained
@@ -134,9 +136,9 @@ syn keyword PopuponFullscreenType smart ignore leave_fullscreen contained
 syn match PopupOnFullscreen /^\s*popup_during_fullscreen\s\+\w\+\s\?$/ contains=PopupOnFullscreenKeyword,PopupOnFullscreenType
 
 " Focus wrapping
-syn keyword FocusWrappingKeyword force_focus_wrapping contained
+syn keyword FocusWrappingKeyword force_focus_wrapping focus_wrapping contained
 syn keyword FocusWrappingType yes no contained
-syn match FocusWrapping /^\s*force_focus_wrapping\s\+\(yes\|no\)\s\?$/ contains=FocusWrappingType,FocusWrappingKeyword
+syn match FocusWrapping /^\s*\(force_\)\?focus_wrapping\s\+\(yes\|no\)\s\?$/ contains=FocusWrappingType,FocusWrappingKeyword
 
 " Forcing Xinerama
 syn keyword ForceXineramaKeyword force_xinerama contained

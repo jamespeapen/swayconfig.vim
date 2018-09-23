@@ -65,6 +65,8 @@ new_float pixel
 new_float normal
 new_float pixel 1
 new_float normal 2
+default_border pixel 1
+default_floating_border pixel 1
 
 # 11) Hide border edge
 hide_edge_borders both
@@ -113,11 +115,14 @@ mouse_warping none
 # 19) Popups during fullscreen mode
 popup_during_fullscreen smart
 
-# 20) Focus wrapping
+# 20) Force Focus wrapping
 force_focus_wrapping yes
+# Focus wrapping
+focus_wrapping no
 
 # 21) Forcing Xinerama
 force_xinerama no
+
 
 # 22) Automatic back-and-forth when switching to the current workspace
 workspace_auto_back_and_forth yes
