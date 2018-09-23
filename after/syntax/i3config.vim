@@ -60,7 +60,7 @@ syn match Initialize /^\s*set\s\+.*$/ contains=Variable,InitializeKeyword,Color,
 syn keyword Action toggle fullscreen restart key import kill shrink grow contained
 syn keyword Action focus move split layout resize restore reload mute unmute exit contained
 syn match Modifier /\w\++\w\+\(\(+\w\+\)\+\)\?/ contained contains=VariableModifier
-syn match Number /\d\+/ contained
+syn match Number /\s\d\+/ contained
 syn keyword BindKeyword bindsym bindcode exec contained
 syn match BindArgument /--\w\+\(\(-\w\+\)\+\)\?\s/ contained
 syn match Bind /^\s*\(bindsym\|bindcode\)\s\+.*$/ contains=Variable,BindKeyword,VariableAndModifier,BindArgument,Number,Modifier,Action,String
