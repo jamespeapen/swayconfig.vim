@@ -1,7 +1,7 @@
 i3config.vim - vim i3 config syntax highlighting
 ------------------------------------------------
 
-This file contains syntax highlighting that I use for i3 config in Vim.
+This file contains the syntax highlighting that I use for i3 config in Vim.
 Compared to the vim standard *conf* syntax highlighting, i3config
 adds highlighting of all keywords, types and options as defined in the i3 configuration manual.
 
@@ -14,7 +14,7 @@ I build this based on the current specification provided (as of Sat 12 Mar 2016)
 Feature
 -------
 i3config does what a syntax highlighting would do and additionally
-provide some sort of syntax checking. If you end up with *Bold Red*
+provides some sort of syntax checking. If you end up with *Bold Red*
 lines in your i3 config file this would mean that your syntax is wrong
 or there is an issue in the plugin.
 If that is the case please report the issue and/or make a pull request to cover the case.

@@ -20,6 +20,10 @@ en
 " Error
 syn match Error /.*/
 
+" Line continuation
+syn match LineCont /\\$/  extend contained
+
+
 " Todo
 syn keyword Todo TODO FIXME XXX contained
 
@@ -159,9 +163,6 @@ syn match DrawingMarks /^\s*show_marks\s\+\(yes\|no\)\s\?$/ contains=FocusWrappi
 " Group mode/bar
 syn keyword BlockKeyword mode bar colors i3bar_command status_command position exec mode hidden_state modifier id position output background statusline tray_output tray_padding separator separator_symbol workspace_buttons strip_workspace_numbers binding_mode_indicator focused_workspace active_workspace inactive_workspace urgent_workspace binding_mode contained
 syn region Block start=+.*s\?{$+ end=+^}$+ contains=BlockKeyword,String,Bind,Comment,Font,FocusWrappingType,Color,Variable transparent keepend extend
-
-" Line continuation
-" TODO: This is not the easiest thing to do. I am keeping it for another time.
 
 " Define the highlighting.
 hi! def link Error Error
