@@ -164,6 +164,32 @@ xft:System San Francisco Display, \
 # 28) X resources
 set_from_resource $black i3wm.color0 #000000
 
+# 29) gaps
+gaps inner 1
+gaps outer 2
+gaps inner set 3
+gaps inner plus 4
+gaps inner minus 5
+gaps outer set 6
+gaps outer plus 7
+gaps outer minus 8
+gaps inner current 9
+gaps inner current set 10
+gaps inner current plus 11
+gaps inner current minus 12
+gaps inner all 13
+gaps inner all set 14
+gaps inner all plus 15
+gaps inner all minus 16
+gaps outer current 17
+gaps outer current set 18
+gaps outer current plus 19
+gaps outer current minus 20
+gaps outer all 21
+gaps outer all set 22
+gaps outer all plus 23
+gaps outer all minus 24
+
 # change focus
 bindsym Mod1+h focus left
 bindsym Mod1+j focus down
