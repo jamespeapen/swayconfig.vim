@@ -56,14 +56,18 @@ syn match Variable /\$\w\+\(\(-\w\+\)\+\)\?\(\s\|+\)\?/ contains=VariableModifie
 syn keyword InitializeKeyword set contained
 syn match Initialize /^\s*set\s\+.*$/ contains=Variable,InitializeKeyword,Color,String
 
+" Gaps
+syn keyword GapStyleKeyword inner outer current all set plus minus contained
+syn match GapStyle /^\s*\(gaps\)\s\+\(inner\|outer\)\(\s\+\(current\|all\)\)\?\(\s\+\(set\|plus\|minus\)\)\?\(\s\+\d\+\)$/ contains=GapStyleKeyword,number
+
 " Keyboard bindings
 syn keyword Action toggle fullscreen restart key import kill shrink grow contained
 syn keyword Action focus move split layout resize restore reload mute unmute exit contained
 syn match Modifier /\w\++\w\+\(\(+\w\+\)\+\)\?/ contained contains=VariableModifier
 syn match Number /\s\d\+/ contained
-syn keyword BindKeyword bindsym bindcode exec contained
+syn keyword BindKeyword bindsym bindcode exec gaps contained
 syn match BindArgument /--\w\+\(\(-\w\+\)\+\)\?\s/ contained
-syn match Bind /^\s*\(bindsym\|bindcode\)\s\+.*$/ contains=Variable,BindKeyword,VariableAndModifier,BindArgument,Number,Modifier,Action,String
+syn match Bind /^\s*\(bindsym\|bindcode\)\s\+.*$/ contains=Variable,BindKeyword,VariableAndModifier,BindArgument,Number,Modifier,Action,String,GapStyleKeyword
 
 " Floating
 syn keyword SizeSpecial x contained
@@ -175,6 +179,7 @@ hi! def link FocusOnActivationType Type
 hi! def link PopupOnFullscreenType Type
 hi! def link OrientationKeyword Type
 hi! def link MouseWarpingType Type
+hi! def link GapStyleKeyword Type
 hi! def link LayoutKeyword Type
 hi! def link BorderStyleKeyword Type
 hi! def link EdgeKeyword Type
@@ -202,6 +207,7 @@ hi! def link NoStartupId PreProc
 hi! def link FontKeyword Identifier
 hi! def link BindKeyword Identifier
 hi! def link Orientation Identifier
+hi! def link GapStyle Identifier
 hi! def link Layout Identifier
 hi! def link BorderStyle Identifier
 hi! def link Edge Identifier
