@@ -237,6 +237,6 @@ hi! def link FocusOnActivationKeyword Identifier
 hi! def link DrawingMarksKeyword Identifier
 hi! def link BlockKeyword Identifier
 hi! def link Variable Statement
-hi! def link ArbitraryCommand Ignore
+hi! def link ArbitraryCommand Type
 
 let b:current_syntax = "i3config"
