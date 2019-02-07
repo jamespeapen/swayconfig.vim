@@ -53,8 +53,8 @@ syn keyword InitializeKeyword set contained
 syn match Initialize /^\s*set\s\+.*$/ contains=Variable,InitializeKeyword,Color,String
 
 " Gaps
-syn keyword GapStyleKeyword inner outer current all set plus minus contained
-syn match GapStyle /^\s*\(gaps\)\s\+\(inner\|outer\)\(\s\+\(current\|all\)\)\?\(\s\+\(set\|plus\|minus\)\)\?\(\s\+\d\+\)$/ contains=GapStyleKeyword,number
+syn keyword GapStyleKeyword inner outer horizontal vertical top right bottom left current all set plus minus toggle contained
+syn match GapStyle /^\s*\(gaps\)\s\+\(inner\|outer\|horizontal\|vertical\|left\|top\|right\|bottom\)\(\s\+\(current\|all\)\)\?\(\s\+\(set\|plus\|minus\|toggle\)\)\?\(\s\+\d\+\)$/ contains=GapStyleKeyword,number
 syn keyword SmartGapKeyword on inverse_outer contained
 syn match SmartGap /^\s*smart_gaps\s\+\(on\|inverse_outer\)\s\?$/ contains=SmartGapKeyword
 syn keyword SmartBorderKeyword on no_gaps contained

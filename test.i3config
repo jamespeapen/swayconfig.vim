@@ -168,6 +168,10 @@ set_from_resource $black i3wm.color0 #000000
 # 29) gaps
 gaps inner 1
 gaps outer 2
+gaps left 2
+gaps top 2
+gaps right 2
+gaps top 2
 gaps inner set 3
 gaps inner plus 4
 gaps inner minus 5
@@ -190,6 +194,9 @@ gaps outer all 21
 gaps outer all set 22
 gaps outer all plus 23
 gaps outer all minus 24
+gaps inner all set 0
+gaps horizontal current plus 40
+gaps outer current toggle 60
 
 # change focus
 bindsym Mod1+h focus left
