@@ -53,8 +53,11 @@ or
 or you can add this line your .vimrc file
 
 ```vim
-autocmd BufNewFile,BufRead ~/.config/i3/config set filetype=i3config
-```vim
+aug i3config_ft_detection
+  au!
+  au BufNewFile,BufRead ~/.config/i3/config set filetype=i3config
+aug end
+```
 
 ## Installation instructions
 

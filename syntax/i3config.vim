@@ -1,8 +1,8 @@
 " Vim syntax file
 " Language: i3 config file
 " Maintainer: Mohamed Boughaba <mohamed dot bgb at gmail dot com>
-" Version: 0.3
-" Last Change: 2017-10-27 23:59
+" Version: 0.4
+" Last Change: 2019-03-23 21:54
 
 " References:
 " http://i3wm.org/docs/userguide.html#configuring
