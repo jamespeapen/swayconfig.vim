@@ -13,6 +13,7 @@ provided (as of Sat 12 Mar 2016) in:
 ![](i3config.vim.gif)
 
 *using vim color scheme [dracula](https://github.com/dracula/vim)*
+
 *using Powerline font [ProFont for Powerline](https://github.com/powerline/fonts/blob/master/ProFont/README.rst)*
 
 ## Features
