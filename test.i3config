@@ -236,6 +236,18 @@ bindsym Mod1+j focus down
 bindsym Mod1+k focus up
 bindsym Mod1+l focus right
 
+# change workspace
+bindsym $mod+1 workspace $ws1
+
+# switch mode
+bindsym $mod+p mode "$pmode" 
+
+# move container to workspace
+bindsym $mode+Shift+1 move container to workspace $ws1
+
+# grow window
+bindsym $mod+u resize grow height 5 px or 5 ppt
+
 # 30) Focus follow mouse
 focus_follows_mouse no
 focus_follows_mouse yes
