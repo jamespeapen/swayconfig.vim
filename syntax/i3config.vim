@@ -53,7 +53,7 @@ syn keyword i3ConfigInitializeKeyword set contained
 syn match i3ConfigInitialize /^\s*set\s\+.*$/ contains=i3ConfigVariable,i3ConfigInitializeKeyword,i3ConfigColor,i3ConfigString
 
 " Gaps
-syn keyword i3ConfigGapStyleKeyword inner outer horizontal vertical top right bottom left current all set plus minus toggle contained
+syn keyword i3ConfigGapStyleKeyword inner outer horizontal vertical top right bottom left current all set plus minus toggle up down contained
 syn match i3ConfigGapStyle /^\s*\(gaps\)\s\+\(inner\|outer\|horizontal\|vertical\|left\|top\|right\|bottom\)\(\s\+\(current\|all\)\)\?\(\s\+\(set\|plus\|minus\|toggle\)\)\?\(\s\+\(-\?\d\+\|\$.*\)\)$/ contains=i3ConfigGapStyleKeyword,number,i3ConfigVariable
 syn keyword i3ConfigSmartGapKeyword on inverse_outer contained
 syn match i3ConfigSmartGap /^\s*smart_gaps\s\+\(on\|inverse_outer\)\s\?$/ contains=i3ConfigSmartGapKeyword
@@ -62,7 +62,7 @@ syn match i3ConfigSmartBorder /^\s*smart_borders\s\+\(on\|no_gaps\)\s\?$/ contai
 
 " Keyboard bindings
 syn keyword i3ConfigAction toggle fullscreen restart key import kill shrink grow contained
-syn keyword i3ConfigAction focus move split layout resize restore reload mute unmute exit contained
+syn keyword i3ConfigAction focus move grow height width split layout resize restore reload mute unmute exit mode workspace container to contained
 syn match i3ConfigModifier /\w\++\w\+\(\(+\w\+\)\+\)\?/ contained contains=i3ConfigVariableModifier
 syn match i3ConfigNumber /\s\d\+/ contained
 syn keyword i3ConfigBindKeyword bindsym bindcode exec gaps contained
