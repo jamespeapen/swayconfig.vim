@@ -203,7 +203,6 @@ hi! def link i3ConfigWindowCommandSpecial            Type
 hi! def link i3ConfigFocusWrappingType               Type
 hi! def link i3ConfigUnitOr                          Type
 hi! def link i3ConfigFontSize                        Constant
-hi! def link i3ConfigPixelSize                       Constant
 hi! def link i3ConfigColor                           Constant
 hi! def link i3ConfigNumber                          Constant
 hi! def link i3ConfigUnit                            Constant
