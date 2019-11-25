@@ -127,6 +127,9 @@ syn match i3ConfigWorkspace /^\s*workspace\s\+.*$/ contains=i3ConfigWorkspaceKey
 syn keyword i3ConfigClientColorKeyword client focused focused_inactive unfocused urgent placeholder background contained
 syn match i3ConfigClientColor /^\s*client.\w\+\s\+.*$/ contains=i3ConfigClientColorKeyword,i3ConfigColor,i3ConfigVariable
 
+syn keyword i3ConfigTitleAlignKeyword left center right contained
+syn match i3ConfigTitleAlign /^\s*title_align\s\+.*$/ contains=i3ConfigTitleAlignKeyword
+
 " Interprocess communication
 syn match i3ConfigInterprocessKeyword /ipc-socket/ contained
 syn match i3ConfigInterprocess /^\s*ipc-socket\s\+.*$/ contains=i3ConfigInterprocessKeyword
@@ -191,6 +194,7 @@ hi! def link i3ConfigOrientationKeyword              Type
 hi! def link i3ConfigMouseWarpingType                Type
 hi! def link i3ConfigFocusFollowsMouseType           Type
 hi! def link i3ConfigGapStyleKeyword                 Type
+hi! def link i3ConfigTitleAlignKeyword               Type
 hi! def link i3ConfigSmartGapKeyword                 Type
 hi! def link i3ConfigSmartBorderKeyword              Type
 hi! def link i3ConfigLayoutKeyword                   Type
@@ -223,6 +227,7 @@ hi! def link i3ConfigFontKeyword                     Identifier
 hi! def link i3ConfigBindKeyword                     Identifier
 hi! def link i3ConfigOrientation                     Identifier
 hi! def link i3ConfigGapStyle                        Identifier
+hi! def link i3ConfigTitleAlign                      Identifier
 hi! def link i3ConfigSmartGap                        Identifier
 hi! def link i3ConfigSmartBorder                     Identifier
 hi! def link i3ConfigLayout                          Identifier
