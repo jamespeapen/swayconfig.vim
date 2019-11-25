@@ -65,9 +65,11 @@ syn keyword i3ConfigAction toggle fullscreen restart key import kill shrink grow
 syn keyword i3ConfigAction focus move grow height width split layout resize restore reload mute unmute exit mode workspace container to contained
 syn match i3ConfigModifier /\w\++\w\+\(\(+\w\+\)\+\)\?/ contained contains=i3ConfigVariableModifier
 syn match i3ConfigNumber /\s\d\+/ contained
+syn match i3ConfigUnit /\sp\(pt\|x\)/ contained
+syn match i3ConfigUnitOr /\sor/ contained
 syn keyword i3ConfigBindKeyword bindsym bindcode exec gaps contained
 syn match i3ConfigBindArgument /--\w\+\(\(-\w\+\)\+\)\?\s/ contained
-syn match i3ConfigBind /^\s*\(bindsym\|bindcode\)\s\+.*$/ contains=i3ConfigVariable,i3ConfigBindKeyword,i3ConfigVariableAndModifier,i3ConfigBindArgument,i3ConfigNumber,i3ConfigModifier,i3ConfigAction,i3ConfigString,i3ConfigGapStyleKeyword
+syn match i3ConfigBind /^\s*\(bindsym\|bindcode\)\s\+.*$/ contains=i3ConfigVariable,i3ConfigBindKeyword,i3ConfigVariableAndModifier,i3ConfigNumber,i3ConfigUnit,i3ConfigUnitOr,i3ConfigBindArgument,i3ConfigModifier,i3ConfigAction,i3ConfigString,i3ConfigGapStyleKeyword
 
 " Floating
 syn keyword i3ConfigSizeSpecial x contained
@@ -173,7 +175,7 @@ syn match i3ConfigDrawingMarks /^\s*show_marks\s\+\(yes\|no\)\s\?$/ contains=i3C
 
 " Group mode/bar
 syn keyword i3ConfigBlockKeyword mode bar colors i3bar_command status_command position exec mode hidden_state modifier id position output background statusline tray_output tray_padding separator separator_symbol workspace_buttons strip_workspace_numbers binding_mode_indicator focused_workspace active_workspace inactive_workspace urgent_workspace binding_mode contained
-syn region i3ConfigBlock start=+.*s\?{$+ end=+^}$+ contains=i3ConfigBlockKeyword,i3ConfigString,Bind,i3ConfigComment,Font,i3ConfigFocusWrappingType,i3ConfigColor,i3ConfigVariable transparent keepend extend
+syn region i3ConfigBlock start=+.*s\?{$+ end=+^}$+ contains=i3ConfigBlockKeyword,i3ConfigString,Bind,i3ConfigBind,i3ConfigComment,Font,i3ConfigFocusWrappingType,i3ConfigColor,i3ConfigVariable transparent keepend extend
 
 " Line continuation
 syn region i3ConfigLineCont start=/^.*\\$/ end=/^.*$/ contains=i3ConfigBlockKeyword,i3ConfigString,Bind,i3ConfigComment,Font,i3ConfigFocusWrappingType,i3ConfigColor,i3ConfigVariable transparent keepend extend
@@ -199,9 +201,12 @@ hi! def link i3ConfigCommand                         Type
 hi! def link i3ConfigOutput                          Type
 hi! def link i3ConfigWindowCommandSpecial            Type
 hi! def link i3ConfigFocusWrappingType               Type
+hi! def link i3ConfigUnitOr                          Type
 hi! def link i3ConfigFontSize                        Constant
+hi! def link i3ConfigPixelSize                       Constant
 hi! def link i3ConfigColor                           Constant
 hi! def link i3ConfigNumber                          Constant
+hi! def link i3ConfigUnit                            Constant
 hi! def link i3ConfigVariableAndModifier             Constant
 hi! def link i3ConfigTimeUnit                        Constant
 hi! def link i3ConfigModifier                        Constant
