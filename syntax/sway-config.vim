@@ -73,10 +73,12 @@ syn match swayConfigBindArgument /--\w\+\(\(-\w\+\)\+\)\?\s/ contained
 syn match swayConfigBind /^\s*\(bindsym\|bindcode\)\s\+.*$/ contains=swayConfigVariable,swayConfigBindKeyword,swayConfigVariableAndModifier,swayConfigNumber,swayConfigUnit,swayConfigUnitOr,swayConfigBindArgument,swayConfigModifier,swayConfigAction,swayConfigString,swayConfigGapStyleKeyword,swayConfigBorderStyleKeyword
 
 " Floating
+syn keyword swayConfigFloatingModifier floating_modifier contained
+syn match swayConfigFloatingMouseAction /^\s\?.*floating_modifier\s.*\(normal\|inverted\)$/ contains=swayConfigFloatingModifier,swayConfigVariable
+
 syn keyword swayConfigSizeSpecial x contained
 syn match swayConfigNegativeSize /-/ contained
 syn match swayConfigSize /-\?\d\+\s\?x\s\?-\?\d\+/ contained contains=swayConfigSizeSpecial,swayConfigNumber,swayConfigNegativeSize
-syn match swayConfigFloating /^\s*floating_modifier\s\+\$\w\+\d\?/ contains=swayConfigVariable
 syn match swayConfigFloating /^\s*floating_\(maximum\|minimum\)_size\s\+-\?\d\+\s\?x\s\?-\?\d\+/ contains=swayConfigSize
 
 " Orientation
@@ -262,5 +264,8 @@ hi! def link swayConfigVariable                        Statement
 hi! def link swayConfigArbitraryCommand                Type
 hi! def link swayConfigInclude                         Identifier
 hi! def link swayConfigFile                            Constant
+hi! def link swayConfigFloatingModifier                Identifier
+hi! def link swayConfigFloatingMouseAction             Type
+
 
 let b:current_syntax = "sway-config"
