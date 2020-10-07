@@ -1,14 +1,13 @@
-# i3config.vim - vim i3 config syntax highlighting
+# sway-config.vim - vim Sway config syntax highlighting
 
-This file contains the syntax highlighting that I use for i3 config in Vim.
-Compared to the vim standard *conf* syntax highlighting, i3config
-adds highlighting of all keywords,
-types and options as defined in the i3 configuration manual.
+This file contains the syntax highlighting that I use for sway config in Vim.
+Compared to the vim standard *conf* syntax highlighting, sway-config
+adds highlighting of keywords,
+types and options for sway config files. This is a work in progress and more keywords
+and patterns need to be added.
 
-I built this based on the current specification
-provided (as of Sat 12 Mar 2016) in:
-
-<http://i3wm.org/docs/userguide.html#configuring>
+Sway syntax is similar to ![i3 syntax](http://i3wm.org/docs/userguide.html#configuring) with 
+a few differences in keywords. 
 
 ![](i3config.vim.gif)
 
@@ -18,44 +17,39 @@ provided (as of Sat 12 Mar 2016) in:
 
 ## Features
 
-i3config does what a syntax highlighting would do and additionally
+sway-config does what a syntax highlighting would do and additionally
 provides some sort of syntax checking. If you end up with *Bold Red*
-lines in your i3 config file this would mean that your syntax is wrong
+lines in your sway config file this would mean that your syntax is wrong
 or there is an issue in the plugin.
 If that is the case please report the issue and/or
 make a pull request to cover the case.
 
 ### File type detection
 
-There is no specific extension for i3 config file.
-For auto detection, the recommended method is to rename your file to something like:
-
-+ .i3.config
-+ i3.config
-+ something.i3config
-+ something.i3.config
+There is no specific extension for sway config file. The plugin checks for the word
+sway in the buffer to set the filetype.
 
 > This way you can keep your file clean somewhere in a
-dotfile repository and have it symlinked to ~/.i3/config
+dotfile repository and have it symlinked to ~/.config/sway/config
 
 If you don't want to, then you can always do:
 
 ```vim
-:set ft=i3config
+:set ft=swayconfig
 ```
 
 or
 
 ```vim
-:set filetype=i3config
+:set filetype=swayconfig
 ```
 
 or you can add this line your .vimrc file
 
 ```vim
-aug i3config_ft_detection
+aug swayconfig_ft_detection
   au!
-  au BufNewFile,BufRead ~/.config/i3/config set filetype=i3config
+  au BufNewFile,BufRead ~/.config/sway/config set filetype=swayconfig
 aug end
 ```
 Additonally, you an add `# vim: filetype=i3config` anywhere in your config file, as suggested by the original plugin (see below).
@@ -69,7 +63,7 @@ Follow one of the steps below and reload vim afterwards.
 Install using [Vundle](https://github.com/gmarik/Vundle.vim) by adding
 
 ```vim
-Plugin 'mboughaba/i3config.vim'
+Plugin 'jamespeapen/sway-config.vim'
 ```
 
 to `.vimrc` and run `:PluginInstall`.
@@ -81,13 +75,10 @@ Install using [vim-plug](https://github.com/junegunn/vim-plug). Similar than the
 Add
 
 ```vim
-Plug 'mboughaba/i3config.vim'
+Plug 'jamespeapen/sway-config.vim'
 ```
 
 to `.vimrc` and run `:PlugInstall`.
-
-> I use Vundle myself, the two steps below may not be fully correct,
-you need to change them to fit your needs.
 
 ### Git submodule + Pathogen
 
