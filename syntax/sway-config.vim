@@ -184,6 +184,10 @@ syn region swayConfigBlock start=+.*s\?{$+ end=+^}$+ contains=swayConfigBlockKey
 " Line continuation
 syn region swayConfigLineCont start=/^.*\\$/ end=/^.*$/ contains=swayConfigBlockKeyword,swayConfigString,swayConfigBind,swayConfigComment,swayConfigFont,swayConfigFocusWrappingType,swayConfigColor,swayConfigVariable transparent keepend extend
 
+" Includes with relative paths to config files
+syn keyword swayConfigInclude include contained
+syn match swayConfigFile /^include\s\(\~\?\/.*$\|\.\{0,2}\/.*$\)/ contains=swayConfigInclude
+
 " Define the highlighting.
 hi! def link swayConfigError                           Error
 hi! def link swayConfigTodo                            Todo
@@ -256,5 +260,7 @@ hi! def link swayConfigDrawingMarksKeyword             Identifier
 hi! def link swayConfigBlockKeyword                    Identifier
 hi! def link swayConfigVariable                        Statement
 hi! def link swayConfigArbitraryCommand                Type
+hi! def link swayConfigInclude                         Identifier
+hi! def link swayConfigFile                            Constant
 
 let b:current_syntax = "sway-config"
