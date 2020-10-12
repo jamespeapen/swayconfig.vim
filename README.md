@@ -87,7 +87,7 @@ and you prefer to use git submodules, run
 
 ```sh
 cd ~/.vim
-git submodule add https://github.com/mboughaba/i3config.vim.git bundle/syntax/
+git submodule add https://github.com/mboughaba/sway-config.vim.git bundle/syntax/
 ```
 
 ### Manual installation
@@ -96,37 +96,27 @@ If you don't have either Vundle or Pathogen installed, copy both i3config.vim fi
 to .vim/after/syntax and .vim/after/ftdetect respectively.
 
 ```sh
-git clone https://github.com/mboughaba/i3config.git /tmp/i3config.vim
+git clone https://github.com/jamespeapen/sway-config.git /tmp/sway-config.vim
 mkdir -p ~/.vim/after/syntax/
-mv /tmp/i3config.vim/after/syntax/i3config.vim ~/.vim/after/syntax/i3config.vim
-rm -rf /tmp/i3config.vim
+mv /tmp/sway-config.vim/after/syntax/swayconfig.vim ~/.vim/after/syntax/swayconfig.vim
+rm -rf /tmp/sway-config.vim
 ```
 
 ## Inspired by
 
-+ PotatoesMaster/i3-vim-syntax
-  <https://github.com/PotatoesMaster/i3-vim-syntax>
-+ vim-scripts/edifact.vim
-  <https://github.com/vim-scripts/edifact.vim> (For Error highlighting).
-
-### What about PotatoesMaster/i3-vim-syntax
-
-*PotatoesMaster/i3-vim-syntax* was the one I used in the past.
-But as the maintainer himself pointed out,
-there are some issues and a rewrite is needed.
++ mboughaba/i3config.git
+  <https://github.com/mboughaba/i3config.git>
 
 ## Contribution
 
 Feel free to make a pull request, I will integrate it when time permits.
-Make sure to add a line to cover your test in the *test.i3config*.
+Make sure to add a line to cover your test in the *test.swayconfig*.
 
 ## Background information
 
 ### Author
-
+James Eapen
 Mohamed Boughaba
-
-Development is done at: <https://github.com/mboughaba/i3config.vim>
 
 ## License
 
