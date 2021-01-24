@@ -63,7 +63,7 @@ syn match swayConfigSmartBorder /^\s*smart_borders\s\+\(on\|no_gaps\)\s\?$/ cont
 
 " Keyboard bindings
 syn keyword swayConfigAction toggle fullscreen restart key import kill shrink grow contained
-syn keyword swayConfigAction focus move grow height width split layout resize restore reload mute unmute exit mode workspace container to contained
+syn keyword swayConfigAction focus move grow height width split layout resize restore reload mute unmute exit mode workspace container to output contained
 syn match swayConfigModifier /\w\++\w\+\(\(+\w\+\)\+\)\?/ contained contains=swayConfigVariableModifier
 syn match swayConfigNumber /\s\d\+/ contained
 syn match swayConfigUnit /\sp\(pt\|x\)/ contained
@@ -123,8 +123,16 @@ syn match swayConfigExec /^\s*exec\(_always\)\?\s\+.*$/ contains=swayConfigExecK
 
 " Automatically putting workspaces on specific screens
 syn keyword swayConfigWorkspaceKeyword workspace contained
-syn keyword swayConfigOutput output contained
-syn match swayConfigWorkspace /^\s*workspace\s\+.*$/ contains=swayConfigWorkspaceKeyword,swayConfigNumber,swayConfigString,swayConfigOutput
+syn keyword swayConfigOutputKeyword output contained
+syn match swayConfigWorkspace /^\s*workspace\s\+.*$/ contains=swayConfigWorkspaceKeyword,swayConfigNumber,swayConfigString,swayConfigOutputKeyword
+
+" set display outputs
+syn match swayConfigOutput /^\s*output\s\+.*$/ contains=swayConfigOutputKeyword
+
+" set display focus 
+syn keyword swayConfigFocusKeyword focus contained
+syn keyword swayConfigFocusType output contained
+syn match swayConfigFocus /^\s*focus\soutput\s.*$/ contains=swayConfigFocusKeyword,swayConfigFocusType
 
 " Changing colors
 syn keyword swayConfigClientColorKeyword client focused focused_inactive unfocused urgent placeholder background contained
@@ -191,6 +199,7 @@ syn keyword swayConfigInclude include contained
 syn match swayConfigFile /^include\s\(\~\?\/.*$\|\.\{0,2}\/.*$\)/ contains=swayConfigInclude
 
 " Define the highlighting.
+let b:current_syntax = "sway-config"
 hi! def link swayConfigError                           Error
 hi! def link swayConfigTodo                            Todo
 hi! def link swayConfigComment                         Comment
@@ -209,7 +218,7 @@ hi! def link swayConfigBorderStyleKeyword              Type
 hi! def link swayConfigEdgeKeyword                     Type
 hi! def link swayConfigAction                          Type
 hi! def link swayConfigCommand                         Type
-hi! def link swayConfigOutput                          Type
+hi! def link swayConfigOutputKeyword                   Type
 hi! def link swayConfigWindowCommandSpecial            Type
 hi! def link swayConfigFocusWrappingType               Type
 hi! def link swayConfigUnitOr                          Type
@@ -266,6 +275,7 @@ hi! def link swayConfigInclude                         Identifier
 hi! def link swayConfigFile                            Constant
 hi! def link swayConfigFloatingModifier                Identifier
 hi! def link swayConfigFloatingMouseAction             Type
+hi! def link swayConfigFocusKeyword                    Type
+hi! def link swayConfigFocusType                       Identifier
 
 
-let b:current_syntax = "sway-config"
