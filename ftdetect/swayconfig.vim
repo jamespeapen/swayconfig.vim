@@ -1,4 +1,4 @@
-aug sway-config#ft_detect
+aug swayconfig#ft_detect
     au!
-    au BufNewFile,BufRead *sway/config set filetype=sway-config
+    au BufNewFile,BufRead *sway/config set filetype=swayconfig
 aug end

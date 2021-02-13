@@ -199,7 +199,7 @@ syn keyword swayConfigInclude include contained
 syn match swayConfigFile /^include\s\(\~\?\/.*$\|\.\{0,2}\/.*$\)/ contains=swayConfigInclude
 
 " Define the highlighting.
-let b:current_syntax = "sway-config"
+let b:current_syntax = "swayconfig"
 hi! def link swayConfigError                           Error
 hi! def link swayConfigTodo                            Todo
 hi! def link swayConfigComment                         Comment

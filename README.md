@@ -1,7 +1,7 @@
-# sway-config.vim - vim Sway config syntax highlighting
+# swayconfig.vim - vim Sway config syntax highlighting
 
 This file contains the syntax highlighting that I use for sway config in Vim.
-Compared to the vim standard *conf* syntax highlighting, sway-config
+Compared to the vim standard *conf* syntax highlighting, swayconfig
 adds highlighting of keywords,
 types and options for sway config files. This is a work in progress and more keywords
 and patterns need to be added.
@@ -17,7 +17,7 @@ a few differences in keywords.
 
 ## Features
 
-sway-config does what a syntax highlighting would do and additionally
+swayconfig does what a syntax highlighting would do and additionally
 provides some sort of syntax checking. If you end up with *Bold Red*
 lines in your sway config file this would mean that your syntax is wrong
 or there is an issue in the plugin.
@@ -63,7 +63,7 @@ Follow one of the steps below and reload vim afterwards.
 Install using [Vundle](https://github.com/gmarik/Vundle.vim) by adding
 
 ```vim
-Plugin 'jamespeapen/sway-config.vim'
+Plugin 'jamespeapen/swayconfig.vim'
 ```
 
 to `.vimrc` and run `:PluginInstall`.
@@ -75,7 +75,7 @@ Install using [vim-plug](https://github.com/junegunn/vim-plug). Similar than the
 Add
 
 ```vim
-Plug 'jamespeapen/sway-config.vim'
+Plug 'jamespeapen/swayconfig.vim'
 ```
 
 to `.vimrc` and run `:PlugInstall`.
@@ -87,7 +87,7 @@ and you prefer to use git submodules, run
 
 ```sh
 cd ~/.vim
-git submodule add https://github.com/mboughaba/sway-config.vim.git bundle/syntax/
+git submodule add https://github.com/mboughaba/swayconfig.vim.git bundle/syntax/
 ```
 
 ### Manual installation
@@ -96,10 +96,10 @@ If you don't have either Vundle or Pathogen installed, copy both i3config.vim fi
 to .vim/after/syntax and .vim/after/ftdetect respectively.
 
 ```sh
-git clone https://github.com/jamespeapen/sway-config.git /tmp/sway-config.vim
+git clone https://github.com/jamespeapen/swayconfig.git /tmp/swayconfig.vim
 mkdir -p ~/.vim/after/syntax/
-mv /tmp/sway-config.vim/after/syntax/swayconfig.vim ~/.vim/after/syntax/swayconfig.vim
-rm -rf /tmp/sway-config.vim
+mv /tmp/swayconfig.vim/after/syntax/swayconfig.vim ~/.vim/after/syntax/swayconfig.vim
+rm -rf /tmp/swayconfig.vim
 ```
 
 ## Inspired by
