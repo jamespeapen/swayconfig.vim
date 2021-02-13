@@ -6,14 +6,8 @@ adds highlighting of keywords,
 types and options for sway config files. This is a work in progress and more keywords
 and patterns need to be added.
 
-Sway syntax is similar to ![i3 syntax](http://i3wm.org/docs/userguide.html#configuring) with 
-a few differences in keywords. 
-
-![](i3config.vim.gif)
-
-*using vim color scheme [dracula](https://github.com/dracula/vim)*
-
-*using Powerline font [ProFont for Powerline](https://github.com/powerline/fonts/blob/master/ProFont/README.rst)*
+Sway syntax is similar to ![i3 syntax](http://i3wm.org/docs/userguide.html#configuring)
+with a few differences in keywords.
 
 ## Features
 
@@ -52,7 +46,9 @@ aug swayconfig_ft_detection
   au BufNewFile,BufRead ~/.config/sway/config set filetype=swayconfig
 aug end
 ```
-Additonally, you an add `# vim: filetype=i3config` anywhere in your config file, as suggested by the original plugin (see below).
+
+Additonally, you an add `# vim: filetype=i3config` anywhere in your config file,
+as suggested by the original plugin (see below).
 
 ## Installation instructions
 
@@ -70,7 +66,8 @@ to `.vimrc` and run `:PluginInstall`.
 
 ### vim-plug
 
-Install using [vim-plug](https://github.com/junegunn/vim-plug). Similar than the installation for Vundle, just change `Plugin` to `Plug`:
+Install using [vim-plug](https://github.com/junegunn/vim-plug). Similar than the
+installation for Vundle, just change `Plugin` to `Plug`:
 
 Add
 
@@ -115,7 +112,9 @@ Make sure to add a line to cover your test in the *test.swayconfig*.
 ## Background information
 
 ### Author
+
 James Eapen
+
 Mohamed Boughaba
 
 ## License
