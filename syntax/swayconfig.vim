@@ -1,5 +1,5 @@
 " Vim syntax file
-" Language: i3 config file
+" Language: sway config file
 " Original Author: Mohamed Boughaba <mohamed dot bgb at gmail dot com>
 " Maintainer: James Eapen <jamespeapen at gmail dot com>
 " Version: 1.0
