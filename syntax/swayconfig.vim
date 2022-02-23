@@ -188,7 +188,7 @@ syn keyword swayConfigDrawingMarksKeyword show_marks contained
 syn match swayConfigDrawingMarks /^\s*show_marks\s\+\(yes\|no\)\s\?$/ contains=swayConfigFocusWrappingType,swayConfigDrawingMarksKeyword
 
 " Group mode/bar
-syn keyword swayConfigBlockKeyword mode bar colors i3bar_command status_command position exec mode hidden_state modifier id position output background statusline tray_output tray_padding separator separator_symbol workspace_buttons strip_workspace_numbers binding_mode_indicator focused_workspace active_workspace inactive_workspace urgent_workspace binding_mode contained
+syn keyword swayConfigBlockKeyword set input mode bar colors i3bar_command status_command position exec mode hidden_state modifier id position output background statusline tray_output tray_padding separator separator_symbol workspace_buttons strip_workspace_numbers binding_mode_indicator focused_workspace active_workspace inactive_workspace urgent_workspace binding_mode contained
 syn region swayConfigBlock start=+.*s\?{$+ end=+^}$+ contains=swayConfigBlockKeyword,swayConfigString,swayConfigBind,swayConfigComment,swayConfigFont,swayConfigFocusWrappingType,swayConfigColor,swayConfigVariable transparent keepend extend
 
 " Line continuation
