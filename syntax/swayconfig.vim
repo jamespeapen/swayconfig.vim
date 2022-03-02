@@ -198,6 +198,10 @@ syn region swayConfigLineCont start=/^.*\\$/ end=/^.*$/ contains=swayConfigBlock
 syn keyword swayConfigInclude include contained
 syn match swayConfigFile /^include\s\(\~\?\/.*$\|\.\{0,2}\/.*$\)/ contains=swayConfigInclude
 
+" xwayland 
+syn keyword swayConfigXwaylandKeyword xwayland contained
+syn match swayConfigXwaylandModifier /^\s*xwayland\s\+\(enable\|disable\|force\)\s\?$/ contains=swayConfigXwaylandKeyword
+
 " Define the highlighting.
 let b:current_syntax = "swayconfig"
 hi! def link swayConfigError                           Error
@@ -277,5 +281,6 @@ hi! def link swayConfigFloatingModifier                Identifier
 hi! def link swayConfigFloatingMouseAction             Type
 hi! def link swayConfigFocusKeyword                    Type
 hi! def link swayConfigFocusType                       Identifier
-
+hi! def link swayConfigXwaylandKeyword                 Identifier
+hi! def link swayConfigXwaylandModifier                Type
 
