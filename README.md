@@ -6,7 +6,7 @@ adds highlighting of keywords,
 types and options for sway config files. This is a work in progress and more keywords
 and patterns need to be added.
 
-Sway syntax is similar to ![i3 syntax](http://i3wm.org/docs/userguide.html#configuring)
+Sway syntax is similar to [i3 syntax](http://i3wm.org/docs/userguide.html#configuring)
 with a few differences in keywords.
 
 ## Features
