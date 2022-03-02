@@ -15,6 +15,7 @@ new_float normall
 hade_edge_borders both
 exec_ chromium
 mouse_wraping none
+floating_modifier $mod
 
 # 2) COMMENT
 # This is a comment
@@ -49,7 +50,7 @@ bindsym $mod+y border pixel $def_border_pix
 
 
 # 6) Floating
-floating_modifier $mod
+floating_modifier $mod normal
 floating_minimum_size 75 x 50
 floating_maximum_size -1 x -1
 
