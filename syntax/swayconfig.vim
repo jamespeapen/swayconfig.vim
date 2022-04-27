@@ -68,9 +68,9 @@ syn match swayConfigModifier /\w\++\w\+\(\(+\w\+\)\+\)\?/ contained contains=swa
 syn match swayConfigNumber /\s\d\+/ contained
 syn match swayConfigUnit /\sp\(pt\|x\)/ contained
 syn match swayConfigUnitOr /\sor/ contained
-syn keyword swayConfigBindKeyword bindsym bindcode exec gaps border contained
+syn keyword swayConfigBindKeyword bindsym bindcode bindswitch exec gaps border contained
 syn match swayConfigBindArgument /--\w\+\(\(-\w\+\)\+\)\?\s/ contained
-syn match swayConfigBind /^\s*\(bindsym\|bindcode\)\s\+.*$/ contains=swayConfigVariable,swayConfigBindKeyword,swayConfigVariableAndModifier,swayConfigNumber,swayConfigUnit,swayConfigUnitOr,swayConfigBindArgument,swayConfigModifier,swayConfigAction,swayConfigString,swayConfigGapStyleKeyword,swayConfigBorderStyleKeyword
+syn match swayConfigBind /^\s*\(bindsym\|bindcode\|bindswitch\)\s\+.*$/ contains=swayConfigVariable,swayConfigBindKeyword,swayConfigVariableAndModifier,swayConfigNumber,swayConfigUnit,swayConfigUnitOr,swayConfigBindArgument,swayConfigModifier,swayConfigAction,swayConfigString,swayConfigGapStyleKeyword,swayConfigBorderStyleKeyword
 
 " Floating
 syn keyword swayConfigFloatingModifier floating_modifier contained
