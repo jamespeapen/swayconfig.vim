@@ -81,13 +81,16 @@ syn match swayConfigBindGestureSwipe /^\s*\(bindgesture\)\s\+swipe\(:[1-5]\)\?:\
 syn match swayConfigBindGesturePinch /^\s*\(bindgesture\)\s\+\(pinch\):.*$/ contains=swayConfigBindKeyword,swayConfigBindGestureCommand,swayConfigBindGestureDirection,swayConfigBindGesturePinchDirection,swayConfigWorkspaceKeyword,swayConfigAction
 
 " Floating
+syn keyword swayConfigFloatingKeyword floating contained
+syn match swayConfigFloating /^\s*floating\s\+\(enable\|disable\|toggle\)\s*$/ contains=swayConfigFloatingKeyword
+
 syn keyword swayConfigFloatingModifier floating_modifier contained
 syn match swayConfigFloatingMouseAction /^\s\?.*floating_modifier\s.*\(normal\|inverted\)$/ contains=swayConfigFloatingModifier,swayConfigVariable
 
 syn keyword swayConfigSizeSpecial x contained
 syn match swayConfigNegativeSize /-/ contained
 syn match swayConfigSize /-\?\d\+\s\?x\s\?-\?\d\+/ contained contains=swayConfigSizeSpecial,swayConfigNumber,swayConfigNegativeSize
-syn match swayConfigFloating /^\s*floating_\(maximum\|minimum\)_size\s\+-\?\d\+\s\?x\s\?-\?\d\+/ contains=swayConfigSize
+syn match swayConfigFloatingSize /^\s*floating_\(maximum\|minimum\)_size\s\+-\?\d\+\s\?x\s\?-\?\d\+/ contains=swayConfigSize
 
 " Orientation
 syn keyword swayConfigOrientationKeyword vertical horizontal auto contained
@@ -236,6 +239,7 @@ hi! def link swayConfigWindowCommandSpecial            Type
 hi! def link swayConfigFocusWrappingType               Type
 hi! def link swayConfigUnitOr                          Type
 hi! def link swayConfigClientColorKeyword              Type
+hi! def link swayConfigFloating                        Type
 hi! def link swayConfigBindGestureDirection            Constant
 hi! def link swayConfigBindGesturePinchDirection       Constant
 hi! def link swayConfigFontSize                        Constant
@@ -267,7 +271,7 @@ hi! def link swayConfigSmartBorder                     Identifier
 hi! def link swayConfigLayout                          Identifier
 hi! def link swayConfigBorderStyle                     Identifier
 hi! def link swayConfigEdge                            Identifier
-hi! def link swayConfigFloating                        Identifier
+hi! def link swayConfigFloatingSize                    Identifier
 hi! def link swayConfigCommandKeyword                  Identifier
 hi! def link swayConfigNoFocusKeyword                  Identifier
 hi! def link swayConfigInitializeKeyword               Identifier
@@ -291,6 +295,7 @@ hi! def link swayConfigVariable                        Statement
 hi! def link swayConfigArbitraryCommand                Type
 hi! def link swayConfigInclude                         Identifier
 hi! def link swayConfigFile                            Constant
+hi! def link swayConfigFloatingKeyword                 Identifier
 hi! def link swayConfigFloatingModifier                Identifier
 hi! def link swayConfigFloatingMouseAction             Type
 hi! def link swayConfigFocusKeyword                    Type
