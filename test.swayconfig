@@ -16,6 +16,12 @@ hade_edge_borders both
 exec_ chromium
 mouse_wraping none
 floating_modifier $mod
+bindgesture pin:right workspace prev
+bindgesture swipe:outward 
+bindgesture swipe:inward workspace prev
+bindgesture swipe:clockwise workspace prev
+bindgesture hold:right workspace prev
+bindgesture hold:inward workspace prev
 
 # 2) COMMENT
 # This is a comment
@@ -49,7 +55,11 @@ bindsym $mod+u border none
 bindsym $mod+y border pixel $def_border_pix
 bindswitch --reload --locked lid:on output $laptop disable
 bindswitch --reload --locked lid:off output $laptop enable
-
+bindgesture swipe:right workspace prev
+bindgesture swipe:4:left workspace prev
+bindgesture swipe:right workspace prev
+bindgesture pinch:inward+up move up
+bindgesture hold:3 workspace next
 
 # 6) Floating
 floating_modifier $mod normal

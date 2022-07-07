@@ -68,9 +68,17 @@ syn match swayConfigModifier /\w\++\w\+\(\(+\w\+\)\+\)\?/ contained contains=swa
 syn match swayConfigNumber /\s\d\+/ contained
 syn match swayConfigUnit /\sp\(pt\|x\)/ contained
 syn match swayConfigUnitOr /\sor/ contained
-syn keyword swayConfigBindKeyword bindsym bindcode bindswitch exec gaps border contained
+syn keyword swayConfigBindKeyword bindsym bindcode bindswitch bindgesture exec gaps border contained
 syn match swayConfigBindArgument /--\w\+\(\(-\w\+\)\+\)\?\s/ contained
 syn match swayConfigBind /^\s*\(bindsym\|bindcode\|bindswitch\)\s\+.*$/ contains=swayConfigVariable,swayConfigBindKeyword,swayConfigVariableAndModifier,swayConfigNumber,swayConfigUnit,swayConfigUnitOr,swayConfigBindArgument,swayConfigModifier,swayConfigAction,swayConfigString,swayConfigGapStyleKeyword,swayConfigBorderStyleKeyword
+
+" bindgestures
+syn keyword swayConfigBindGestureCommand swipe pinch hold contained
+syn keyword swayConfigBindGestureDirection up down left right next prev contained
+syn keyword swayConfigBindGesturePinchDirection inward outward clockwise counterclockwise contained
+syn match swayConfigBindGestureHold /^\s*\(bindgesture\)\s\+hold\(:[1-5]\)\?\s\+.*$/ contains=swayConfigBindKeyword,swayConfigBindGestureCommand,swayConfigBindGestureDirection,swayConfigWorkspaceKeyword,swayConfigAction
+syn match swayConfigBindGestureSwipe /^\s*\(bindgesture\)\s\+swipe\(:[1-5]\)\?:\(up\|down\|left\|right\)\s\+.*$/ contains=swayConfigBindKeyword,swayConfigBindGestureCommand,swayConfigBindGestureDirection,swayConfigWorkspaceKeyword,swayConfigAction
+syn match swayConfigBindGesturePinch /^\s*\(bindgesture\)\s\+\(pinch\):.*$/ contains=swayConfigBindKeyword,swayConfigBindGestureCommand,swayConfigBindGestureDirection,swayConfigBindGesturePinchDirection,swayConfigWorkspaceKeyword,swayConfigAction
 
 " Floating
 syn keyword swayConfigFloatingModifier floating_modifier contained
@@ -228,6 +236,8 @@ hi! def link swayConfigWindowCommandSpecial            Type
 hi! def link swayConfigFocusWrappingType               Type
 hi! def link swayConfigUnitOr                          Type
 hi! def link swayConfigClientColorKeyword              Type
+hi! def link swayConfigBindGestureDirection            Constant
+hi! def link swayConfigBindGesturePinchDirection       Constant
 hi! def link swayConfigFontSize                        Constant
 hi! def link swayConfigColor                           Constant
 hi! def link swayConfigNumber                          Constant
@@ -245,8 +255,10 @@ hi! def link swayConfigAssignSpecial                   Special
 hi! def link swayConfigFontNamespace                   PreProc
 hi! def link swayConfigBindArgument                    PreProc
 hi! def link swayConfigNoStartupId                     PreProc
+hi! def link swayConfigBindGesture                     PreProc
 hi! def link swayConfigFontKeyword                     Identifier
 hi! def link swayConfigBindKeyword                     Identifier
+hi! def link swayConfigBindGestureCommand              Identifier
 hi! def link swayConfigOrientation                     Identifier
 hi! def link swayConfigGapStyle                        Identifier
 hi! def link swayConfigTitleAlign                      Identifier
