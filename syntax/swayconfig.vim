@@ -56,9 +56,9 @@ syn match swayConfigInitialize /^\s*set\s\+.*$/ contains=swayConfigVariable,sway
 " Gaps
 syn keyword swayConfigGapStyleKeyword inner outer horizontal vertical top right bottom left current all set plus minus toggle up down contained
 syn match swayConfigGapStyle /^\s*\(gaps\)\s\+\(inner\|outer\|horizontal\|vertical\|left\|top\|right\|bottom\)\(\s\+\(current\|all\)\)\?\(\s\+\(set\|plus\|minus\|toggle\)\)\?\(\s\+\(-\?\d\+\|\$.*\)\)$/ contains=swayConfigGapStyleKeyword,swayConfigNumber,swayConfigVariable
-syn keyword swayConfigSmartGapKeyword on inverse_outer contained
+syn keyword swayConfigSmartGapKeyword on inverse_outer off contained
 syn match swayConfigSmartGap /^\s*smart_gaps\s\+\(on\|inverse_outer\|off\)\s\?$/ contains=swayConfigSmartGapKeyword
-syn keyword swayConfigSmartBorderKeyword on no_gaps contained
+syn keyword swayConfigSmartBorderKeyword on no_gaps off contained
 syn match swayConfigSmartBorder /^\s*smart_borders\s\+\(on\|no_gaps\|off\)\s\?$/ contains=swayConfigSmartBorderKeyword
 
 " Keyboard bindings
