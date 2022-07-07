@@ -281,3 +281,7 @@ title_align center
 xwayland enable
 xwayland disable
 xwayland force
+
+# 37) output
+output * bg ~/test/test.test.png
+output DP-2 pos 0 0
