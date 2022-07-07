@@ -270,6 +270,7 @@ smart_gaps inverse_outer
 # 33) smart_borders
 smart_borders on
 smart_borders no_gaps
+smart_borders off
 
 # 35) title alignment
 title_align left
