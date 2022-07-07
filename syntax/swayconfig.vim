@@ -135,8 +135,9 @@ syn keyword swayConfigFocusType output contained
 syn match swayConfigFocus /^\s*focus\soutput\s.*$/ contains=swayConfigFocusKeyword,swayConfigFocusType
 
 " Changing colors
-syn keyword swayConfigClientColorKeyword client focused focused_inactive unfocused urgent placeholder background contained
-syn match swayConfigClientColor /^\s*client.\w\+\s\+.*$/ contains=swayConfigClientColorKeyword,swayConfigColor,swayConfigVariable
+syn keyword swayConfigClientKeyword client contained
+syn keyword swayConfigClientColorKeyword focused focused_inactive focused_tab_title unfocused urgent placeholder contained
+syn match swayConfigClientColor /^\s*client.\w\+\s\+.*$/ contains=swayConfigClientKeyword,swayConfigClientColorKeyword,swayConfigColor,swayConfigVariable
 
 syn keyword swayConfigTitleAlignKeyword left center right contained
 syn match swayConfigTitleAlign /^\s*title_align\s\+.*$/ contains=swayConfigTitleAlignKeyword
@@ -226,6 +227,7 @@ hi! def link swayConfigOutputKeyword                   Type
 hi! def link swayConfigWindowCommandSpecial            Type
 hi! def link swayConfigFocusWrappingType               Type
 hi! def link swayConfigUnitOr                          Type
+hi! def link swayConfigClientColorKeyword              Type
 hi! def link swayConfigFontSize                        Constant
 hi! def link swayConfigColor                           Constant
 hi! def link swayConfigNumber                          Constant
@@ -261,7 +263,7 @@ hi! def link swayConfigAssignKeyword                   Identifier
 hi! def link swayConfigResourceKeyword                 Identifier
 hi! def link swayConfigExecKeyword                     Identifier
 hi! def link swayConfigWorkspaceKeyword                Identifier
-hi! def link swayConfigClientColorKeyword              Identifier
+hi! def link swayConfigClientKeyword                   Identifier
 hi! def link swayConfigInterprocessKeyword             Identifier
 hi! def link swayConfigMouseWarpingKeyword             Identifier
 hi! def link swayConfigFocusFollowsMouseKeyword        Identifier
