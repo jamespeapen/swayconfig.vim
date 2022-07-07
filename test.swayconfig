@@ -295,3 +295,8 @@ xwayland force
 # 37) output
 output * bg ~/test/test.test.png
 output DP-2 pos 0 0
+
+# 38) include
+include ~/test/test
+include ../test
+include test/test

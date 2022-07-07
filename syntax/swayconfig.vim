@@ -205,7 +205,7 @@ syn region swayConfigLineCont start=/^.*\\$/ end=/^.*$/ contains=swayConfigBlock
 
 " Includes with relative paths to config files
 syn keyword swayConfigInclude include contained
-syn match swayConfigFile /^include\s\(\~\?\/.*$\|\.\{0,2}\/.*$\)/ contains=swayConfigInclude
+syn match swayConfigFile /^\s\?include\s\+.*$/ contains=swayConfigInclude
 
 " xwayland 
 syn keyword swayConfigXwaylandKeyword xwayland contained
