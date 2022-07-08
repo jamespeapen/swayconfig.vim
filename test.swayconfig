@@ -21,8 +21,10 @@ bindgesture pin:right workspace prev
 bindgesture swipe:outward 
 bindgesture swipe:inward workspace prev
 bindgesture swipe:clockwise workspace prev
+bindgesture swipe:2:right workspace prev
 bindgesture hold:right workspace prev
 bindgesture hold:inward workspace prev
+bindgesture pinch:6:inward+up move up
 
 # 2) COMMENT
 # This is a comment
@@ -59,7 +61,7 @@ bindswitch --reload --locked lid:off output $laptop enable
 bindgesture swipe:right workspace prev
 bindgesture swipe:4:left workspace prev
 bindgesture swipe:right workspace prev
-bindgesture pinch:inward+up move up
+bindgesture pinch:2:outward+down move up
 bindgesture hold:3 workspace next
 
 # 6) Floating
