@@ -186,6 +186,12 @@ font \
 xft:System San Francisco Display, \
 xft:System San Francisco Display, \
 
+exec swayidle -w \
+         timeout 60 'swaylock -f -c 000000' \
+         timeout 60 'swaymsg "output * dpms off"' \
+         resume 'swaymsg "output * dpms on"' \
+         before-sleep 'swaylock -f -c 000000' 
+
 # 28) X resources
 set_from_resource $black i3wm.color0 #000000
 

@@ -204,7 +204,7 @@ syn keyword swayConfigBlockKeyword set input mode bar colors i3bar_command statu
 syn region swayConfigBlock start=+.*s\?{$+ end=+^}$+ contains=swayConfigBlockKeyword,swayConfigString,swayConfigBind,swayConfigComment,swayConfigFont,swayConfigFocusWrappingType,swayConfigColor,swayConfigVariable transparent keepend extend
 
 " Line continuation
-syn region swayConfigLineCont start=/^.*\\$/ end=/^.*$/ contains=swayConfigBlockKeyword,swayConfigString,swayConfigBind,swayConfigComment,swayConfigFont,swayConfigFocusWrappingType,swayConfigColor,swayConfigVariable transparent keepend extend
+syn region swayConfigLineCont start=/^.*\\$/ end=/^[^\\]*$/ contains=swayConfigBlockKeyword,swayConfigString,swayConfigBind,swayConfigComment,swayConfigFont,swayConfigFocusWrappingType,swayConfigColor,swayConfigVariable transparent keepend extend
 
 " Includes with relative paths to config files
 syn keyword swayConfigInclude include contained
