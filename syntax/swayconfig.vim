@@ -2,7 +2,7 @@
 " Language: sway config file
 " Original Author: Mohamed Boughaba <mohamed dot bgb at gmail dot com>
 " Maintainer: James Eapen <jamespeapen at gmail dot com>
-" Version: 0.11.2
+" Version: 0.11.3
 " Last Change: 2020-10-07 
 
 " References:
@@ -65,7 +65,7 @@ syn match swayConfigSmartBorder /^\s*smart_borders\s\+\(on\|no_gaps\|off\)\s\?$/
 syn keyword swayConfigAction toggle fullscreen restart key import kill shrink grow contained
 syn keyword swayConfigAction focus move grow height width split layout resize restore reload mute unmute exit mode workspace container to output contained
 syn match swayConfigModifier /\w\++\w\+\(\(+\w\+\)\+\)\?/ contained contains=swayConfigVariableModifier
-syn match swayConfigNumber /\s\d\+/ contained
+syn match swayConfigNumber /\s[+-]\?\(\d\+\.\)\?\d\+/ contained
 syn match swayConfigUnit /\sp\(pt\|x\)/ contained
 syn match swayConfigUnitOr /\sor/ contained
 syn keyword swayConfigBindKeyword bindsym bindcode bindswitch bindgesture exec gaps border contained

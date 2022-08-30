@@ -313,3 +313,6 @@ output DP-2 pos 0 0
 include ~/test/test
 include ../test
 include test/test
+
+# 39) number
+bindsym $mod+Shift+z output * scale 2.5
