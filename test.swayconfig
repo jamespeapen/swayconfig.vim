@@ -15,7 +15,6 @@ new_float normall
 hade_edge_borders both
 exec_ chromium
 mouse_wraping none
-floating_modifier $mod
 floating on
 bindgesture pin:right workspace prev
 bindgesture swipe:outward 
@@ -70,6 +69,7 @@ floating disable
 floating toggle
 
 floating_modifier $mod normal
+floating_modifier $mod
 floating_minimum_size 75 x 50
 floating_maximum_size -1 x -1
 

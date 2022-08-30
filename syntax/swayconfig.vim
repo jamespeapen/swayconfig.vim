@@ -2,7 +2,7 @@
 " Language: sway config file
 " Original Author: Mohamed Boughaba <mohamed dot bgb at gmail dot com>
 " Maintainer: James Eapen <jamespeapen at gmail dot com>
-" Version: 0.11.0
+" Version: 0.11.2
 " Last Change: 2020-10-07 
 
 " References:
@@ -85,7 +85,7 @@ syn keyword swayConfigFloatingKeyword floating contained
 syn match swayConfigFloating /^\s*floating\s\+\(enable\|disable\|toggle\)\s*$/ contains=swayConfigFloatingKeyword
 
 syn keyword swayConfigFloatingModifier floating_modifier contained
-syn match swayConfigFloatingMouseAction /^\s\?.*floating_modifier\s.*\(normal\|inverted\)$/ contains=swayConfigFloatingModifier,swayConfigVariable
+syn match swayConfigFloatingMouseAction /^\s\?.*floating_modifier\s\S\+\s\?\(normal\|inverted\|none\)\?$/ contains=swayConfigFloatingModifier,swayConfigVariable
 
 syn keyword swayConfigSizeSpecial x contained
 syn match swayConfigNegativeSize /-/ contained
