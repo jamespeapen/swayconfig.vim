@@ -2,7 +2,7 @@
 " Language: sway config file
 " Original Author: Mohamed Boughaba <mohamed dot bgb at gmail dot com>
 " Maintainer: James Eapen <jamespeapen at gmail dot com>
-" Version: 0.11.3
+" Version: 0.11.4
 " Last Change: 2020-10-07 
 
 " References:
@@ -132,6 +132,10 @@ syn keyword swayConfigExecKeyword exec exec_always contained
 syn match swayConfigNoStartupId /--no-startup-id/ contained " We are not using swayConfigBindArgument as only no-startup-id is supported here
 syn match swayConfigExec /^\s*exec\(_always\)\?\s\+.*$/ contains=swayConfigExecKeyword,swayConfigNoStartupId,swayConfigString
 
+" Input config
+syn keyword swayConfigInputKeyword input contained
+syn match swayConfigInput /^\s*input\s\+.*$/ contains=swayConfigInputKeyword
+
 " Automatically putting workspaces on specific screens
 syn keyword swayConfigWorkspaceKeyword workspace contained
 syn keyword swayConfigOutputKeyword output contained
@@ -235,6 +239,7 @@ hi! def link swayConfigEdgeKeyword                     Type
 hi! def link swayConfigAction                          Type
 hi! def link swayConfigCommand                         Type
 hi! def link swayConfigOutputKeyword                   Type
+hi! def link swayConfigInputKeyword                    Type
 hi! def link swayConfigWindowCommandSpecial            Type
 hi! def link swayConfigFocusWrappingType               Type
 hi! def link swayConfigUnitOr                          Type

@@ -306,7 +306,10 @@ xwayland disable
 xwayland force
 
 # 37) output
-output * bg ~/test/test.test.png
+output * {
+    bg ~/test/test.test.png
+}
+
 output DP-2 pos 0 0
 
 # 38) include
@@ -316,3 +319,9 @@ include test/test
 
 # 39) number
 bindsym $mod+Shift+z output * scale 2.5
+
+input * {
+    xkb_layout fr(bepo)
+}
+
+input * xkb_layout fr(bepo)
