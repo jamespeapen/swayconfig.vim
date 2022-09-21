@@ -2,7 +2,7 @@
 " Language: sway config file
 " Original Author: Mohamed Boughaba <mohamed dot bgb at gmail dot com>
 " Maintainer: James Eapen <jamespeapen at gmail dot com>
-" Version: 0.11.4
+" Version: 0.11.5
 " Last Change: 2020-10-07 
 
 " References:
@@ -204,11 +204,11 @@ syn keyword swayConfigDrawingMarksKeyword show_marks contained
 syn match swayConfigDrawingMarks /^\s*show_marks\s\+\(yes\|no\)\s\?$/ contains=swayConfigFocusWrappingType,swayConfigDrawingMarksKeyword
 
 " Group mode/bar
-syn keyword swayConfigBlockKeyword set input mode bar colors i3bar_command status_command position exec mode hidden_state modifier id position output background statusline tray_output tray_padding separator separator_symbol workspace_buttons strip_workspace_numbers binding_mode_indicator focused_workspace active_workspace inactive_workspace urgent_workspace binding_mode contained
-syn region swayConfigBlock start=+.*s\?{$+ end=+^}$+ contains=swayConfigBlockKeyword,swayConfigString,swayConfigBind,swayConfigComment,swayConfigFont,swayConfigFocusWrappingType,swayConfigColor,swayConfigVariable transparent keepend extend
+syn keyword swayConfigBlockKeyword set bar colors i3bar_command status_command position hidden_state modifier id position background statusline tray_output tray_padding separator separator_symbol workspace_buttons strip_workspace_numbers binding_mode_indicator focused_workspace active_workspace inactive_workspace urgent_workspace binding_mode contained
+syn region swayConfigBlock start=+.*s\?{$+ end=+^}$+ contains=swayConfigBlockKeyword,swayConfigString,swayConfigAction,swayConfigBind,swayConfigComment,swayConfigFont,swayConfigFocusWrappingType,swayConfigColor,swayConfigVariable,swayConfigInputKeyword,swayConfigOutputKeyword transparent keepend extend
 
 " Line continuation
-syn region swayConfigLineCont start=/^.*\\$/ end=/^[^\\]*$/ contains=swayConfigBlockKeyword,swayConfigString,swayConfigBind,swayConfigComment,swayConfigFont,swayConfigFocusWrappingType,swayConfigColor,swayConfigVariable transparent keepend extend
+syn region swayConfigLineCont start=/^.*\\$/ end=/^[^\\]*$/ contains=swayConfigBlockKeyword,swayConfigString,swayConfigAction,swayConfigBind,swayConfigComment,swayConfigFont,swayConfigFocusWrappingType,swayConfigColor,swayConfigVariable,swayConfigExecKeyword transparent keepend extend
 
 " Includes with relative paths to config files
 syn keyword swayConfigInclude include contained
