@@ -281,6 +281,7 @@ bindsym $mod+u resize grow height 5 px or 5 ppt
 # 30) Focus follow mouse
 focus_follows_mouse no
 focus_follows_mouse yes
+focus_follows_mouse always
 
 # 31) Mouse wrapping
 mouse_warping none

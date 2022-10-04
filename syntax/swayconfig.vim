@@ -168,8 +168,8 @@ syn match swayConfigMouseWarping /^\s*mouse_warping\s\+\(output\|none\)\s\?$/ co
 
 " Focus follows mouse
 syn keyword swayConfigFocusFollowsMouseKeyword focus_follows_mouse contained
-syn keyword swayConfigFocusFollowsMouseType yes no contained
-syn match swayConfigFocusFollowsMouse /^\s*focus_follows_mouse\s\+\(yes\|no\)\s\?$/ contains=swayConfigFocusFollowsMouseKeyword,swayConfigFocusFollowsMouseType
+syn keyword swayConfigFocusFollowsMouseType yes no always contained
+syn match swayConfigFocusFollowsMouse /^\s*focus_follows_mouse\s\+\(yes\|no\|always\)\s\?$/ contains=swayConfigFocusFollowsMouseKeyword,swayConfigFocusFollowsMouseType
 
 " Popups during fullscreen mode
 syn keyword swayConfigPopupOnFullscreenKeyword popup_during_fullscreen contained
