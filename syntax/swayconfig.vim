@@ -2,7 +2,7 @@
 " Language: sway config file
 " Original Author: Mohamed Boughaba <mohamed dot bgb at gmail dot com>
 " Maintainer: James Eapen <jamespeapen at gmail dot com>
-" Version: 0.11.5
+" Version: 0.11.6
 " Last Change: 2020-10-07 
 
 " References:
@@ -168,8 +168,8 @@ syn match swayConfigMouseWarping /^\s*mouse_warping\s\+\(output\|none\)\s\?$/ co
 
 " Focus follows mouse
 syn keyword swayConfigFocusFollowsMouseKeyword focus_follows_mouse contained
-syn keyword swayConfigFocusFollowsMouseType yes no contained
-syn match swayConfigFocusFollowsMouse /^\s*focus_follows_mouse\s\+\(yes\|no\)\s\?$/ contains=swayConfigFocusFollowsMouseKeyword,swayConfigFocusFollowsMouseType
+syn keyword swayConfigFocusFollowsMouseType yes no always contained
+syn match swayConfigFocusFollowsMouse /^\s*focus_follows_mouse\s\+\(yes\|no\|always\)\s\?$/ contains=swayConfigFocusFollowsMouseKeyword,swayConfigFocusFollowsMouseType
 
 " Popups during fullscreen mode
 syn keyword swayConfigPopupOnFullscreenKeyword popup_during_fullscreen contained
