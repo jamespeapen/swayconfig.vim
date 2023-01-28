@@ -2,7 +2,7 @@
 " Language: sway config file
 " Original Author: Mohamed Boughaba <mohamed dot bgb at gmail dot com>
 " Maintainer: James Eapen <jamespeapen at gmail dot com>
-" Version: 0.12.1
+" Version: 0.12.2
 " Last Change: 2020-10-07 
 
 " References:
@@ -52,6 +52,9 @@ syn match swayConfigVariableAndModifier /+\w\+/ contained contains=swayConfigVar
 syn match swayConfigVariable /\$\w\+\(\(-\w\+\)\+\)\?\(\s\|+\)\?/ contains=swayConfigVariableModifier,swayConfigVariableAndModifier
 syn keyword swayConfigInitializeKeyword set contained
 syn match swayConfigInitialize /^\s*set\s\+.*$/ contains=swayConfigVariable,swayConfigInitializeKeyword,swayConfigColor,swayConfigString
+
+" yes no
+syn keyword swayConfigYesNoType yes no contained
 
 " Gaps
 syn keyword swayConfigGapStyleKeyword inner outer horizontal vertical top right bottom left current all set plus minus toggle up down contained
@@ -187,11 +190,11 @@ syn match swayConfigFocusWrapping /^\s*\(force_\)\?focus_wrapping\s\+\(yes\|no\)
 
 " Forcing Xinerama
 syn keyword swayConfigForceXineramaKeyword force_xinerama contained
-syn match swayConfigForceXinerama /^\s*force_xinerama\s\+\(yes\|no\)\s\?$/ contains=swayConfigFocusWrappingType,swayConfigForceXineramaKeyword
+syn match swayConfigForceXinerama /^\s*force_xinerama\s\+\(yes\|no\)\s\?$/ contains=swayConfigYesNoType,swayConfigForceXineramaKeyword
 
 " Automatic back-and-forth when switching to the current workspace
 syn keyword swayConfigAutomaticSwitchKeyword workspace_auto_back_and_forth contained
-syn match swayConfigAutomaticSwitch /^\s*workspace_auto_back_and_forth\s\+\(yes\|no\)\s\?$/ contains=swayConfigFocusWrappingType,swayConfigAutomaticSwitchKeyword
+syn match swayConfigAutomaticSwitch /^\s*workspace_auto_back_and_forth\s\+\(yes\|no\)\s\?$/ contains=swayConfigYesNoType,swayConfigAutomaticSwitchKeyword
 
 " Delay urgency hint
 syn keyword swayConfigTimeUnit ms contained
@@ -205,7 +208,7 @@ syn match swayConfigFocusOnActivation /^\s*focus_on_window_activation\s\+\(smart
 
 " Automatic back-and-forth when switching to the current workspace
 syn keyword swayConfigDrawingMarksKeyword show_marks contained
-syn match swayConfigDrawingMarks /^\s*show_marks\s\+\(yes\|no\)\s\?$/ contains=swayConfigFocusWrappingType,swayConfigDrawingMarksKeyword
+syn match swayConfigDrawingMarks /^\s*show_marks\s\+\(yes\|no\)\s\?$/ contains=swayConfigYesNoType,swayConfigDrawingMarksKeyword
 
 " Group mode/bar
 syn keyword swayConfigBlockKeyword set bar colors i3bar_command status_command position hidden_state modifier id position background statusline tray_output tray_padding separator separator_symbol workspace_buttons strip_workspace_numbers binding_mode_indicator focused_workspace active_workspace inactive_workspace urgent_workspace binding_mode contained
@@ -247,6 +250,7 @@ hi! def link swayConfigInputKeyword                    Type
 hi! def link swayConfigSeatKeyword                     Type
 hi! def link swayConfigWindowCommandSpecial            Type
 hi! def link swayConfigFocusWrappingType               Type
+hi! def link swayConfigYesNoType                       Type
 hi! def link swayConfigUnitOr                          Type
 hi! def link swayConfigClientColorKeyword              Type
 hi! def link swayConfigFloating                        Type
