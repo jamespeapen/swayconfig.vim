@@ -2,7 +2,7 @@
 " Language: sway config file
 " Original Author: Mohamed Boughaba <mohamed dot bgb at gmail dot com>
 " Maintainer: James Eapen <jamespeapen at gmail dot com>
-" Version: 0.12.2
+" Version: 0.12.3
 " Last Change: 2020-10-07 
 
 " References:
@@ -184,9 +184,9 @@ syn keyword swayConfigPopuponFullscreenType smart ignore leave_fullscreen contai
 syn match swayConfigPopupOnFullscreen /^\s*popup_during_fullscreen\s\+\w\+\s\?$/ contains=swayConfigPopupOnFullscreenKeyword,swayConfigPopupOnFullscreenType
 
 " Focus wrapping
-syn keyword swayConfigFocusWrappingKeyword force_focus_wrapping focus_wrapping contained
-syn keyword swayConfigFocusWrappingType yes no contained
-syn match swayConfigFocusWrapping /^\s*\(force_\)\?focus_wrapping\s\+\(yes\|no\)\s\?$/ contains=swayConfigFocusWrappingType,swayConfigFocusWrappingKeyword
+syn keyword swayConfigFocusWrappingKeyword focus_wrapping contained
+syn keyword swayConfigFocusWrappingType yes no force workspace contained
+syn match swayConfigFocusWrapping /^\s*focus_wrapping\s\+\(yes\|no\|force\|workspace\)\s\?$/ contains=swayConfigFocusWrappingType,swayConfigFocusWrappingKeyword
 
 " Forcing Xinerama
 syn keyword swayConfigForceXineramaKeyword force_xinerama contained

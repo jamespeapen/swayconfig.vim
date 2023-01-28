@@ -143,10 +143,11 @@ mouse_warping container
 # 19) Popups during fullscreen mode
 popup_during_fullscreen smart
 
-# 20) Force Focus wrapping
-force_focus_wrapping yes
-# Focus wrapping
+# 20) Focus wrapping
 focus_wrapping no
+focus_wrapping yes
+focus_wrapping force
+focus_wrapping workspace
 
 # 21) Forcing Xinerama
 force_xinerama no
