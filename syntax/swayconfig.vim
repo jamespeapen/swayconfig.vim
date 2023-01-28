@@ -2,7 +2,7 @@
 " Language: sway config file
 " Original Author: Mohamed Boughaba <mohamed dot bgb at gmail dot com>
 " Maintainer: James Eapen <jamespeapen at gmail dot com>
-" Version: 0.11.6
+" Version: 0.12.0
 " Last Change: 2020-10-07 
 
 " References:
@@ -136,6 +136,10 @@ syn match swayConfigExec /^\s*exec\(_always\)\?\s\+.*$/ contains=swayConfigExecK
 syn keyword swayConfigInputKeyword input contained
 syn match swayConfigInput /^\s*input\s\+.*$/ contains=swayConfigInputKeyword
 
+" Seat config
+syn keyword swayConfigSeatKeyword seat contained
+syn match swayConfigSeat /^\s*seat\s\+.*$/ contains=swayConfigSeatKeyword
+
 " Automatically putting workspaces on specific screens
 syn keyword swayConfigWorkspaceKeyword workspace contained
 syn keyword swayConfigOutputKeyword output contained
@@ -205,7 +209,7 @@ syn match swayConfigDrawingMarks /^\s*show_marks\s\+\(yes\|no\)\s\?$/ contains=s
 
 " Group mode/bar
 syn keyword swayConfigBlockKeyword set bar colors i3bar_command status_command position hidden_state modifier id position background statusline tray_output tray_padding separator separator_symbol workspace_buttons strip_workspace_numbers binding_mode_indicator focused_workspace active_workspace inactive_workspace urgent_workspace binding_mode contained
-syn region swayConfigBlock start=+.*s\?{$+ end=+^}$+ contains=swayConfigBlockKeyword,swayConfigString,swayConfigAction,swayConfigBind,swayConfigComment,swayConfigFont,swayConfigFocusWrappingType,swayConfigColor,swayConfigVariable,swayConfigInputKeyword,swayConfigOutputKeyword transparent keepend extend
+syn region swayConfigBlock start=+.*s\?{$+ end=+^}$+ contains=swayConfigBlockKeyword,swayConfigString,swayConfigAction,swayConfigBind,swayConfigComment,swayConfigFont,swayConfigFocusWrappingType,swayConfigColor,swayConfigVariable,swayConfigInputKeyword,swayConfigSeatKeyword,swayConfigOutputKeyword transparent keepend extend
 
 " Line continuation
 syn region swayConfigLineCont start=/^.*\\$/ end=/^[^\\]*$/ contains=swayConfigBlockKeyword,swayConfigString,swayConfigAction,swayConfigBind,swayConfigComment,swayConfigFont,swayConfigFocusWrappingType,swayConfigColor,swayConfigVariable,swayConfigExecKeyword transparent keepend extend
@@ -240,6 +244,7 @@ hi! def link swayConfigAction                          Type
 hi! def link swayConfigCommand                         Type
 hi! def link swayConfigOutputKeyword                   Type
 hi! def link swayConfigInputKeyword                    Type
+hi! def link swayConfigSeatKeyword                     Type
 hi! def link swayConfigWindowCommandSpecial            Type
 hi! def link swayConfigFocusWrappingType               Type
 hi! def link swayConfigUnitOr                          Type

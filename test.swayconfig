@@ -326,3 +326,11 @@ input * {
 }
 
 input * xkb_layout fr(bepo)
+
+seat * {
+    hide_cursor 5000
+    hide_cursor when-typing enable
+}
+
+seat hide_cursor 5000
+seat hide_cursor when-typing enable
