@@ -2,8 +2,8 @@
 " Language: sway config file
 " Original Author: Mohamed Boughaba <mohamed dot bgb at gmail dot com>
 " Maintainer: James Eapen <jamespeapen at gmail dot com>
-" Version: 0.12.3
-" Last Change: 2020-10-07 
+" Version: 0.12.4
+" Last Change: 2023-01-28
 
 " References:
 " http://i3wm.org/docs/userguide.html#configuring
@@ -199,7 +199,7 @@ syn match swayConfigAutomaticSwitch /^\s*workspace_auto_back_and_forth\s\+\(yes\
 " Delay urgency hint
 syn keyword swayConfigTimeUnit ms contained
 syn keyword swayConfigDelayUrgencyKeyword force_display_urgency_hint contained
-syn match swayConfigDelayUrgency /^\s*force_display_urgency_hint\s\+\d\+\s\+ms\s\?$/ contains=swayConfigFocusWrappingType,swayConfigDelayUrgencyKeyword,swayConfigNumber,swayConfigTimeUnit
+syn match swayConfigDelayUrgency /^\s*force_display_urgency_hint\s\+\d\+\s\+ms\s\?$/ contains=swayConfigDelayUrgencyKeyword,swayConfigNumber,swayConfigTimeUnit
 
 " Focus on window activation
 syn keyword swayConfigFocusOnActivationKeyword focus_on_window_activation contained
