@@ -2,7 +2,7 @@
 " Language: sway config file
 " Original Author: Mohamed Boughaba <mohamed dot bgb at gmail dot com>
 " Maintainer: James Eapen <jamespeapen at gmail dot com>
-" Version: 0.12.0
+" Version: 0.12.1
 " Last Change: 2020-10-07 
 
 " References:
@@ -167,8 +167,8 @@ syn match swayConfigInterprocess /^\s*ipc-socket\s\+.*$/ contains=swayConfigInte
 
 " Mouse warping
 syn keyword swayConfigMouseWarpingKeyword mouse_warping contained
-syn keyword swayConfigMouseWarpingType output none contained
-syn match swayConfigMouseWarping /^\s*mouse_warping\s\+\(output\|none\)\s\?$/ contains=swayConfigMouseWarpingKeyword,swayConfigMouseWarpingType
+syn keyword swayConfigMouseWarpingType output none container contained
+syn match swayConfigMouseWarping /^\s*mouse_warping\s\+\(output\|container\|none\)\s\?$/ contains=swayConfigMouseWarpingKeyword,swayConfigMouseWarpingType
 
 " Focus follows mouse
 syn keyword swayConfigFocusFollowsMouseKeyword focus_follows_mouse contained
