@@ -2,8 +2,8 @@
 " Language: sway config file
 " Original Author: Mohamed Boughaba <mohamed dot bgb at gmail dot com>
 " Maintainer: James Eapen <jamespeapen at gmail dot com>
-" Version: 0.12.4
-" Last Change: 2023-01-28
+" Version: 0.13.0
+" Last Change: 2023-08-26
 
 " References:
 " http://i3wm.org/docs/userguide.html#configuring
@@ -225,6 +225,10 @@ syn match swayConfigFile /^\s\?include\s\+.*$/ contains=swayConfigInclude
 syn keyword swayConfigXwaylandKeyword xwayland contained
 syn match swayConfigXwaylandModifier /^\s*xwayland\s\+\(enable\|disable\|force\)\s\?$/ contains=swayConfigXwaylandKeyword
 
+" Titlebar padding
+syn keyword swayConfigTitlebarPaddingKeyword titlebar_padding contained
+syn match swayConfigTitlebarPadding /^\s*titlebar_padding\s\+\d\+\(\s\+\d\+\)\?\s\?$/ contains=swayConfigTitlebarPaddingKeyword,swayConfigNumber
+
 " Define the highlighting.
 let b:current_syntax = "swayconfig"
 hi! def link swayConfigError                           Error
@@ -316,4 +320,5 @@ hi! def link swayConfigFocusKeyword                    Type
 hi! def link swayConfigFocusType                       Identifier
 hi! def link swayConfigXwaylandKeyword                 Identifier
 hi! def link swayConfigXwaylandModifier                Type
-
+hi! def link swayConfigTitlebarPaddingKeyword          Identifier
+hi! def link swayConfigTitlebarPadding                 Type

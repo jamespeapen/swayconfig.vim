@@ -24,6 +24,9 @@ bindgesture swipe:2:right workspace prev
 bindgesture hold:right workspace prev
 bindgesture hold:inward workspace prev
 bindgesture pinch:6:inward+up move up
+titlebar_padding
+titlebar_padding 12 1 a
+titlebar_padding 12 1 1
 
 # 2) COMMENT
 # This is a comment
@@ -336,3 +339,9 @@ seat * {
 
 seat hide_cursor 5000
 seat hide_cursor when-typing enable
+
+# 40) titlebar_padding
+titlebar_padding 12 1
+titlebar_padding 1
+titlebar_padding 1 50
+titlebar_padding 0
