@@ -2,7 +2,7 @@
 " Language: sway config file
 " Original Author: Mohamed Boughaba <mohamed dot bgb at gmail dot com>
 " Maintainer: James Eapen <jamespeapen at gmail dot com>
-" Version: 0.13.0
+" Version: 0.13.1
 " Last Change: 2023-08-26
 
 " References:
@@ -175,8 +175,8 @@ syn match swayConfigMouseWarping /^\s*mouse_warping\s\+\(output\|container\|none
 
 " Focus follows mouse
 syn keyword swayConfigFocusFollowsMouseKeyword focus_follows_mouse contained
-syn keyword swayConfigFocusFollowsMouseType yes no always contained
-syn match swayConfigFocusFollowsMouse /^\s*focus_follows_mouse\s\+\(yes\|no\|always\)\s\?$/ contains=swayConfigFocusFollowsMouseKeyword,swayConfigFocusFollowsMouseType
+syn keyword swayConfigFocusFollowsMouseType always contained
+syn match swayConfigFocusFollowsMouse /^\s*focus_follows_mouse\s\+\(yes\|no\|always\)\s\?$/ contains=swayConfigFocusFollowsMouseKeyword,swayConfigFocusFollowsMouseType,swayConfigYesNoType
 
 " Popups during fullscreen mode
 syn keyword swayConfigPopupOnFullscreenKeyword popup_during_fullscreen contained
@@ -185,8 +185,8 @@ syn match swayConfigPopupOnFullscreen /^\s*popup_during_fullscreen\s\+\w\+\s\?$/
 
 " Focus wrapping
 syn keyword swayConfigFocusWrappingKeyword focus_wrapping contained
-syn keyword swayConfigFocusWrappingType yes no force workspace contained
-syn match swayConfigFocusWrapping /^\s*focus_wrapping\s\+\(yes\|no\|force\|workspace\)\s\?$/ contains=swayConfigFocusWrappingType,swayConfigFocusWrappingKeyword
+syn keyword swayConfigFocusWrappingType force workspace contained
+syn match swayConfigFocusWrapping /^\s*focus_wrapping\s\+\(yes\|no\|force\|workspace\)\s\?$/ contains=swayConfigFocusWrappingType,swayConfigFocusWrappingKeyword,swayConfigYesNoType
 
 " Forcing Xinerama
 syn keyword swayConfigForceXineramaKeyword force_xinerama contained
@@ -224,10 +224,6 @@ syn match swayConfigFile /^\s\?include\s\+.*$/ contains=swayConfigInclude
 " xwayland 
 syn keyword swayConfigXwaylandKeyword xwayland contained
 syn match swayConfigXwaylandModifier /^\s*xwayland\s\+\(enable\|disable\|force\)\s\?$/ contains=swayConfigXwaylandKeyword
-
-" Titlebar padding
-syn keyword swayConfigTitlebarPaddingKeyword titlebar_padding contained
-syn match swayConfigTitlebarPadding /^\s*titlebar_padding\s\+\d\+\(\s\+\d\+\)\?\s\?$/ contains=swayConfigTitlebarPaddingKeyword,swayConfigNumber
 
 " Define the highlighting.
 let b:current_syntax = "swayconfig"
@@ -320,5 +316,4 @@ hi! def link swayConfigFocusKeyword                    Type
 hi! def link swayConfigFocusType                       Identifier
 hi! def link swayConfigXwaylandKeyword                 Identifier
 hi! def link swayConfigXwaylandModifier                Type
-hi! def link swayConfigTitlebarPaddingKeyword          Identifier
-hi! def link swayConfigTitlebarPadding                 Type
+
