@@ -61,7 +61,7 @@ bindsym $mod+y border pixel $def_border_pix
 bindswitch --reload --locked lid:on output $laptop disable
 bindswitch --reload --locked lid:off output $laptop enable
 bindgesture swipe:right workspace prev
-bindgesture swipe:4:left workspace prev
+bindgesture swipe:5:left workspace prev
 bindgesture swipe:right workspace prev
 bindgesture pinch:2:outward+down move up
 bindgesture hold:3 workspace next
@@ -71,8 +71,18 @@ floating enable
 floating disable
 floating toggle
 
-floating_modifier $mod normal
-floating_modifier $mod
+# errors
+ floating_modifier bad normal
+ floating_modifier none normal
+ floating_modifier normal
+ floating_modifier inverse
+
+ # valid syntax
+ floating_modifier none
+ floating_modifier $mod normal
+ floating_modifier Mod1 inverse
+ floating_modifier Mod1 normal
+
 floating_minimum_size 75 x 50
 floating_maximum_size -1 x -1
 
@@ -115,6 +125,10 @@ assign [class="^URxvt$"] 2
 assign [class="^URxvt$"] → 2
 assign [class="^URxvt$"] → work
 assign [class="^URxvt$" instance="^irssi$"] → 3
+assign [sandbox_engine="^URxvt$"] → 3
+assign [sandbox_app_id="^URxvt$"] → 3
+assign [sandbox_instance_id="^URxvt$"] → 3
+assign [tag="^URxvt$"] → 3
 
 # 14) Auto start application
 exec chromium
@@ -317,6 +331,8 @@ output * {
 }
 
 output DP-2 pos 0 0
+output DP-2 pos 0 0
+output DP-2 hdr on
 
 # 38) include
 include ~/test/test
